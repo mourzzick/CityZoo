@@ -17,8 +17,8 @@ namespace CityZoo
         {
             id = 0;
             name = "Tom";
-            category = Category.mammal;
-            sex = Sex.male; 
+            category = Category.Mammal;
+            sex = Sex.Male; 
         }
     }
 }
