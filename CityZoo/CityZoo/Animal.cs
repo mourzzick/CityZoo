@@ -10,6 +10,7 @@ namespace CityZoo
     {
         private int id;
         private string name;
+        private double age;
         private Category category; // taxonomic class (mammal, bird, etc.)
         private Sex sex;
 
@@ -17,6 +18,7 @@ namespace CityZoo
         {
             id = 0;
             name = "Tom";
+            age = 0.0;
             category = Category.Mammal;
             sex = Sex.Male; 
         }
