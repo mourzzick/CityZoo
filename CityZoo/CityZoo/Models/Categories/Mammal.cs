@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace CityZoo
 {
-    class Cat : Mammal
+    class Mammal : Animal
     {
+        // Mammal field
+        private int numberOfTeeth;
+        private int tailLength; // in centimeters
+
+
+
+       
     }
 }

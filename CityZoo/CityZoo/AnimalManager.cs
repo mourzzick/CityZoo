@@ -8,19 +8,25 @@ namespace CityZoo
 {
     class AnimalManager
     {
-        private List<Animal> animals;
+        private List<Animal> animalList;
 
         public AnimalManager()
         {
-            animals = new List<Animal>();
+            animalList = new List<Animal>();
+            
+
         }
 
+       
 
-        public void Add(Animal animal)
+
+
+
+        public void AddAnimal(Animal animal)
         {
             if (animal != null)
             {
-                animals.Add(animal);
+                animalList.Add(animal);
             }
         }
     }

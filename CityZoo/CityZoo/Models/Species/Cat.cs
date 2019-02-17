@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace CityZoo
 {
-    class Mammal : Animal
+    class Cat : Mammal
     {
-        private int numberOfTeeth;
-        private int tailLength; // in centimeters
-
-        public Mammal()
+        public override string ToString()
         {
-            
+            return base.ToString();
         }
     }
 }

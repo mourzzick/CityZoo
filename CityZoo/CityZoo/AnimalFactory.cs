@@ -10,22 +10,21 @@ namespace CityZoo
     {
         public static Mammal CreateMammalSpecies(MammalSpecies mammalSpecies)
         {
-            Mammal mammal;
             switch (mammalSpecies)
             {
                 case MammalSpecies.Dog:
-                    mammal = new Dog();
-                    break;
+                    return new Dog();
                 case MammalSpecies.Cat:
-                    mammal = new Cat();
-                    break;
+                    return new Cat();
                 default:
-                    mammal = new Mammal();
-                    break;
+                    return null;
+
+
             }
-            return mammal;
         }
 
+
+        
 
         
     }
