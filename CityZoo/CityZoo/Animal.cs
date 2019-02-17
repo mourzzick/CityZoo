@@ -88,7 +88,7 @@ namespace CityZoo
         }
 
         /// <summary>
-        /// Initializes all Animal fields to default values.
+        /// Initializes all Animal fields to a default values.
         /// </summary>
         private void InitializeVariables()
         {
