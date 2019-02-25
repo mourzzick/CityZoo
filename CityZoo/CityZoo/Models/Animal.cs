@@ -20,13 +20,14 @@ namespace CityZoo
         public int Id
         {
             get { return id; }
-            set
+            private set
             {
-                if (id > 0)
+                if (value > 0)
                 {
                     id = value;
                 }
             }
+          
         }
 
         /// <summary>
@@ -71,30 +72,18 @@ namespace CityZoo
         /// <summary>
         /// Initializes a new instance of the Animal class.
         /// </summary>
-        public Animal()
+        public Animal(int id)
         {
             InitializeVariables();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the Animal class.
-        /// </summary>
-        public Animal(int id, string name, double age, Sex sex) : this()
-        {
             this.Id = id;
-            this.Name = name;
-            this.Age = age;
-            this.Sex = sex;
         }
 
         /// <summary>
-        /// Initializes all Animal fields to a default values.
+        /// Initializes all Animal fields to default values.
         /// </summary>
         private void InitializeVariables()
         {
-            this.Id = 1;
             this.Name = "No name";
-            this.Age = 0.1;
             this.Sex = Sex.Other;
         }
 

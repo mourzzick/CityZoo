@@ -46,7 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
+    <Compile Include="GUI\BirdUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\BirdUserControl.Designer.cs">
+      <DependentUpon>BirdUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MammalUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\MammalUserControl.Designer.cs">
+      <DependentUpon>MammalUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Animal.cs" />
     <Compile Include="AnimalFactory.cs" />
     <Compile Include="AnimalManager.cs" />
     <Compile Include="Models\Categories\Bird.cs" />
@@ -54,10 +66,10 @@
     <Compile Include="Models\Species\Cat.cs" />
     <Compile Include="Constants\Category.cs" />
     <Compile Include="Models\Species\Dog.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Constants\MammalSpecies.cs" />
@@ -65,8 +77,14 @@
     <Compile Include="Models\Categories\Mammal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="GUI\BirdUserControl.resx">
+      <DependentUpon>BirdUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MammalUserControl.resx">
+      <DependentUpon>MammalUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

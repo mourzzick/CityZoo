@@ -8,5 +8,9 @@ namespace CityZoo
 {
     class Dog : Mammal
     {
+        public Dog(int id) : base(id)
+        {
+
+        }
     }
 }

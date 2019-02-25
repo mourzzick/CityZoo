@@ -8,6 +8,10 @@ namespace CityZoo
 {
     class Cat : Mammal
     {
+        public Cat(int id) : base(id)
+        {
+
+        }
         public override string ToString()
         {
             return base.ToString();

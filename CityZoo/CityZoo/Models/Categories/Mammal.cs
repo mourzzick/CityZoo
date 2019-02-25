@@ -45,29 +45,15 @@ namespace CityZoo
         /// <summary>
         /// Initializes a new instance of the Mammal class.
         /// </summary>
-        public Mammal() // TODO: Might have to change the constructor and call the base constructor
+        public Mammal(int id) : base(id)
         {
-            InitializeVariables();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the Mammal class.
-        /// </summary>
-        public Mammal(int numberOfTeeth, int tailLength) : this() // TODO: Might have to change the constructor and call the base constructor
-        {
-            this.NumberOfTeeth = numberOfTeeth;
-            this.TailLength = tailLength;
-        }
-
-        /// <summary>
-        /// Initializes all Mammal fields to a default values.
-        /// </summary>
-        private void InitializeVariables()
-        {
-            this.NumberOfTeeth = 1;
-            this.TailLength = 1;
 
         }
 
-    }
+
+      
+
+    
+
+    } // end class
 }
