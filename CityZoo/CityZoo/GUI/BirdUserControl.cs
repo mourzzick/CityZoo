@@ -17,20 +17,19 @@ namespace CityZoo.GUI
             InitializeComponent();
         }
 
-
-
         public int FlyingSpeed
         {
             get
             {
-                string input = txtFlyingSpeed.Text;
-                if (!string.IsNullOrEmpty(input))
+                int flyingSpeed;
+                bool isSuccessful = Int32.TryParse(txtFlyingSpeed.Text.Trim(), out flyingSpeed);
+                if (isSuccessful)
                 {
-                    return int.Parse(input);
+                    return flyingSpeed;
                 }
                 else
                 {
-                    return 0;
+                    return -1;
                 }
             }
         }
@@ -40,16 +39,20 @@ namespace CityZoo.GUI
         {
             get
             {
-                string input = txtWingspan.Text;
-                if (!string.IsNullOrEmpty(input))
+                int wingspan;
+                bool isSuccessful = Int32.TryParse(txtWingspan.Text.Trim(), out wingspan);
+                if (isSuccessful)
                 {
-                    return int.Parse(input);
+                    return wingspan;
                 }
                 else
                 {
-                    return 0;
+                    return -1;
                 }
             }
         }
+
+
+   
     }
 }

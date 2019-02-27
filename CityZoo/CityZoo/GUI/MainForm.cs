@@ -23,6 +23,7 @@ namespace CityZoo
 
 
 
+
         }
 
 
@@ -212,6 +213,87 @@ namespace CityZoo
         }
 
 
+        private bool ReadInput(Animal animal)
+        {
+            bool isSuccessful = false;
+            return isSuccessful;
+        }
+
+        private bool ReadName(Animal animal)
+        {
+            bool isSuccessful = false;
+            string name = txtName.Text.Trim();
+            if (!string.IsNullOrEmpty(name))
+            {
+                animal.Name = name;
+                isSuccessful = true;
+            }
+            else
+            {
+                MessageBox.Show("Please add animal name.");
+            }
+            return isSuccessful;
+        }
+
+        private bool ReadAge(Animal animal)
+        {
+            bool isSuccessful = false;
+            double age;
+            bool isDouble = Double.TryParse(txtAge.Text.Trim(), out age);
+            if (isDouble)
+            {
+                animal.Age = age;
+                isSuccessful = true;
+            }
+            else
+            {
+                MessageBox.Show("Please add valid animal age.");
+            }
+            return isSuccessful;
+
+        }
+
+
+        private bool ReadMammalSpecifications (Animal animal)
+        {
+            bool isSuccessful = false;
+            int numberOfTeeth = mammalUserControl.NumberOfTheet;
+            int tailLenght = mammalUserControl.TailLength;
+
+            if (numberOfTeeth >= 0 && tailLenght >= 0)
+            {
+                ((Mammal)animal).NumberOfTeeth = numberOfTeeth;
+                ((Mammal)animal).TailLength = tailLenght;
+                isSuccessful = true;
+            }
+            else
+            {
+                MessageBox.Show("Please add number of teeth and tail length.");
+            }
+            return isSuccessful;
+        }
+
+        private bool ReadBirdSpecification(Animal animal)
+        {
+            bool isSuccessful = false;
+            int flyingSpeed = birdUserControl.FlyingSpeed;
+            int wingspan = birdUserControl.Wingspan;
+
+            if (flyingSpeed >= 0 && wingspan >= 0)
+            {
+                ((Bird)animal).FlyingSpeed = flyingSpeed;
+                ((Bird)animal).Wingspan = wingspan;
+                isSuccessful = true;
+
+            }
+            else
+            {
+                MessageBox.Show("Please add number of flying speed and wingspan.");
+
+            }
+            return isSuccessful;
+
+        }
 
 
 
@@ -235,5 +317,11 @@ namespace CityZoo
 
 
 
-    }
+
+
+
+
+
+
+    } // end class
 }

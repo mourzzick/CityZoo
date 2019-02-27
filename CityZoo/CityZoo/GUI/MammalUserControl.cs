@@ -23,14 +23,15 @@ namespace CityZoo.GUI
         {
             get
             {
-                string input = txtNumberOfTeeth.Text;
-                if (!string.IsNullOrEmpty(input))
+                int numberOfTeeth;
+                bool isSuccessful = Int32.TryParse(txtNumberOfTeeth.Text.Trim(), out numberOfTeeth);
+                if (isSuccessful)
                 {
-                    return int.Parse(input);
+                    return numberOfTeeth;
                 }
                 else
                 {
-                    return 0;
+                    return -1;
                 }
             }
         }
@@ -40,14 +41,15 @@ namespace CityZoo.GUI
         {
             get
             {
-                string input = txtTailLength.Text;
-                if (!string.IsNullOrEmpty(input))
+                int tailLenght;
+                bool isSuccessful = Int32.TryParse(txtTailLength.Text.Trim(), out tailLenght);
+                if (isSuccessful)
                 {
-                    return int.Parse(input);
+                    return tailLenght;
                 }
                 else
                 {
-                    return 0;
+                    return -1;
                 }
             }
         }
