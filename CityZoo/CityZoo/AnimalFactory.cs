@@ -21,6 +21,24 @@ namespace CityZoo
             }
         }
 
+        public static Bird CreateBirdSpecies(BirdSpecies birdSpecies, int id)
+        {
+            switch (birdSpecies)
+            {
+                case BirdSpecies.Budgerigar:
+                    return new Budgerigar(id);
+                case BirdSpecies.Cockatiel:
+                    return new Cockatiel(id);
+                case BirdSpecies.Cockatoo:
+                    return new Cockatoo(id);
+                default:
+                    return null;
+            }
+
+        }
+
+
+
     } // end class
 }
 

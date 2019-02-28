@@ -15,9 +15,16 @@ namespace CityZoo.GUI
         public MammalUserControl()
         {
             InitializeComponent();
+            ClearMammalUserControl();
         }
 
-       
+        public void ClearMammalUserControl()
+        {
+            txtNumberOfTeeth.Text = string.Empty;
+            txtTailLength.Text = string.Empty;
+        }
+
+
 
         public int NumberOfTheet
         {

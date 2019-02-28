@@ -50,5 +50,15 @@ namespace CityZoo
         }
 
 
+
+        public override string ToString()
+        {
+            return $"{this.Id,-10} {this.Name,-20} {this.Age,-10} {this.Sex,-15} Flies with {this.flyingSpeed} km/h. Wingspan is {this.wingspan} cm.";
+        }
+
+
+
+
+
     }
 }

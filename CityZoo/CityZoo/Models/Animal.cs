@@ -90,9 +90,6 @@ namespace CityZoo
         /// <summary>
         /// Returns a string that represents the current object.
         /// </summary>
-        public override string ToString()
-        {
-            return $"{id}, {name}, {age}, {sex}";
-        }
+      
     }
 }

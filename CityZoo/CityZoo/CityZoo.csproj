@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Budgerigar.cs" />
+    <Compile Include="Cockatiel.cs" />
+    <Compile Include="Cockatoo.cs" />
     <Compile Include="GUI\BirdUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

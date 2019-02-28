@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace CityZoo
 {
-    class Cat : Mammal
+    class Budgerigar : Bird
     {
-        public Cat(int id) : base(id)
+        public Budgerigar(int id) : base(id)
         {
 
         }
-       
     }
 }

@@ -50,10 +50,15 @@ namespace CityZoo
 
         }
 
+        public override string ToString()
+        {
+            return $"{this.Id, -10} {this.Name, -20} {this.Age, -10} {this.Sex, -15} Has {this.numberOfTeeth} teeth. Tail {this.tailLength} cm long.";
+        }
 
-      
 
-    
+
+
+
 
     } // end class
 }

@@ -15,6 +15,13 @@ namespace CityZoo.GUI
         public BirdUserControl()
         {
             InitializeComponent();
+            ClearBirdUserControl();
+        }
+
+        public void ClearBirdUserControl()
+        {
+            txtFlyingSpeed.Text = string.Empty;
+            txtWingspan.Text = string.Empty;
         }
 
         public int FlyingSpeed
