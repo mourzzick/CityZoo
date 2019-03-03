@@ -67,7 +67,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(583, 429);
+            this.groupBox1.Size = new System.Drawing.Size(714, 429);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Animal Specifications";
@@ -75,9 +75,9 @@
             // btnAddAnimal
             // 
             this.btnAddAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAnimal.Location = new System.Drawing.Point(421, 348);
+            this.btnAddAnimal.Location = new System.Drawing.Point(478, 348);
             this.btnAddAnimal.Name = "btnAddAnimal";
-            this.btnAddAnimal.Size = new System.Drawing.Size(145, 30);
+            this.btnAddAnimal.Size = new System.Drawing.Size(210, 30);
             this.btnAddAnimal.TabIndex = 10;
             this.btnAddAnimal.Text = "Add Animal";
             this.btnAddAnimal.UseVisualStyleBackColor = true;
@@ -88,9 +88,9 @@
             this.lbSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSpecies.FormattingEnabled = true;
             this.lbSpecies.ItemHeight = 20;
-            this.lbSpecies.Location = new System.Drawing.Point(421, 60);
+            this.lbSpecies.Location = new System.Drawing.Point(478, 60);
             this.lbSpecies.Name = "lbSpecies";
-            this.lbSpecies.Size = new System.Drawing.Size(145, 264);
+            this.lbSpecies.Size = new System.Drawing.Size(210, 264);
             this.lbSpecies.TabIndex = 9;
             // 
             // lbCategory
@@ -100,7 +100,7 @@
             this.lbCategory.ItemHeight = 20;
             this.lbCategory.Location = new System.Drawing.Point(257, 60);
             this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(145, 164);
+            this.lbCategory.Size = new System.Drawing.Size(202, 164);
             this.lbCategory.TabIndex = 8;
             this.lbCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
@@ -118,7 +118,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(417, 37);
+            this.label5.Location = new System.Drawing.Point(474, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 20);
             this.label5.TabIndex = 6;
@@ -202,7 +202,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 461);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(583, 322);
+            this.groupBox3.Size = new System.Drawing.Size(720, 322);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "List of Registered Animals";
@@ -224,14 +224,14 @@
             this.lbAnimals.ItemHeight = 20;
             this.lbAnimals.Location = new System.Drawing.Point(14, 51);
             this.lbAnimals.Name = "lbAnimals";
-            this.lbAnimals.Size = new System.Drawing.Size(552, 244);
+            this.lbAnimals.Size = new System.Drawing.Size(700, 244);
             this.lbAnimals.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 795);
+            this.ClientSize = new System.Drawing.Size(744, 795);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Name = "MainForm";

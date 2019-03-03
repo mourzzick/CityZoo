@@ -12,20 +12,19 @@ namespace CityZoo.GUI
 {
     public partial class MammalUserControl : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the MammalUserControl class.
+        /// </summary>
         public MammalUserControl()
         {
             InitializeComponent();
-            ClearMammalUserControl();
+            Clear();
+
         }
 
-        public void ClearMammalUserControl()
-        {
-            txtNumberOfTeeth.Text = string.Empty;
-            txtTailLength.Text = string.Empty;
-        }
-
-
-
+        /// <summary>
+        /// Gets the Mammal number of teeth as an integer value.
+        /// </summary>
         public int NumberOfTheet
         {
             get
@@ -43,7 +42,9 @@ namespace CityZoo.GUI
             }
         }
 
-
+        /// <summary>
+        /// Gets the Mammal tail length as an integer value.
+        /// </summary>
         public int TailLength
         {
             get
@@ -61,8 +62,15 @@ namespace CityZoo.GUI
             }
         }
 
+        /// <summary>
+        /// Clears all MammalUserControl input controls
+        /// </summary>
+        public void Clear()
+        {
+            txtNumberOfTeeth.Text = string.Empty;
+            txtTailLength.Text = string.Empty;
+        }
 
 
-
-    }
+    } // end class
 }

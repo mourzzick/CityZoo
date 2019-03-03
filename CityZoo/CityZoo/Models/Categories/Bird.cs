@@ -8,6 +8,7 @@ namespace CityZoo
 {
     class Bird : Animal
     {
+        // bird fields
         private int flyingSpeed; // unit km/h
         private int wingspan; // unit cm
 
@@ -50,7 +51,10 @@ namespace CityZoo
         }
 
 
-
+        /// <summary>
+        /// Returns a string that represents the Bird object.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{this.Id,-10} {this.Name,-20} {this.Age,-10} {this.Sex,-15} Flies with {this.flyingSpeed} km/h. Wingspan is {this.wingspan} cm.";

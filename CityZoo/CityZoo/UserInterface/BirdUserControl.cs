@@ -12,18 +12,18 @@ namespace CityZoo.GUI
 {
     public partial class BirdUserControl : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the BirdUserControl class.
+        /// </summary>
         public BirdUserControl()
         {
             InitializeComponent();
-            ClearBirdUserControl();
+            Clear();
         }
 
-        public void ClearBirdUserControl()
-        {
-            txtFlyingSpeed.Text = string.Empty;
-            txtWingspan.Text = string.Empty;
-        }
-
+        /// <summary>
+        /// Gets the Bird flying speed as an integer value.
+        /// </summary>
         public int FlyingSpeed
         {
             get
@@ -41,7 +41,9 @@ namespace CityZoo.GUI
             }
         }
 
-
+        /// <summary>
+        /// Gets the Bird wingspan as an integer value.
+        /// </summary>
         public int Wingspan
         {
             get
@@ -59,7 +61,15 @@ namespace CityZoo.GUI
             }
         }
 
+        /// <summary>
+        /// Clears all BirdUserControl input controls
+        /// </summary>
+        public void Clear()
+        {
+            txtFlyingSpeed.Text = string.Empty;
+            txtWingspan.Text = string.Empty;
+        }
 
-   
-    }
+
+    } // end class
 }

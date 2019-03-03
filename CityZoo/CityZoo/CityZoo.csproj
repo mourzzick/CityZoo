@@ -46,48 +46,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Budgerigar.cs" />
-    <Compile Include="Cockatiel.cs" />
-    <Compile Include="Cockatoo.cs" />
-    <Compile Include="GUI\BirdUserControl.cs">
+    <Compile Include="Models\Species\Budgerigar.cs" />
+    <Compile Include="Models\Species\Cockatiel.cs" />
+    <Compile Include="Models\Species\Cockatoo.cs" />
+    <Compile Include="UserInterface\BirdUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\BirdUserControl.Designer.cs">
+    <Compile Include="UserInterface\BirdUserControl.Designer.cs">
       <DependentUpon>BirdUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MammalUserControl.cs">
+    <Compile Include="UserInterface\MammalUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\MammalUserControl.Designer.cs">
+    <Compile Include="UserInterface\MammalUserControl.Designer.cs">
       <DependentUpon>MammalUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Animal.cs" />
-    <Compile Include="AnimalFactory.cs" />
+    <Compile Include="Utilities\AnimalFactory.cs" />
     <Compile Include="AnimalManager.cs" />
     <Compile Include="Models\Categories\Bird.cs" />
-    <Compile Include="Constants\BirdSpecies.cs" />
+    <Compile Include="Enums\BirdSpecies.cs" />
     <Compile Include="Models\Species\Cat.cs" />
-    <Compile Include="Constants\Category.cs" />
+    <Compile Include="Enums\Category.cs" />
     <Compile Include="Models\Species\Dog.cs" />
-    <Compile Include="GUI\MainForm.cs">
+    <Compile Include="UserInterface\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MainForm.Designer.cs">
+    <Compile Include="UserInterface\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Constants\MammalSpecies.cs" />
-    <Compile Include="Constants\Sex.cs" />
+    <Compile Include="Enums\MammalSpecies.cs" />
+    <Compile Include="Enums\Sex.cs" />
     <Compile Include="Models\Categories\Mammal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util.cs" />
-    <EmbeddedResource Include="GUI\BirdUserControl.resx">
+    <EmbeddedResource Include="UserInterface\BirdUserControl.resx">
       <DependentUpon>BirdUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MainForm.resx">
+    <EmbeddedResource Include="UserInterface\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MammalUserControl.resx">
+    <EmbeddedResource Include="UserInterface\MammalUserControl.resx">
       <DependentUpon>MammalUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

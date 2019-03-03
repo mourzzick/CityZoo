@@ -8,7 +8,7 @@ namespace CityZoo
 {
     class Mammal : Animal
     {
-        // Mammal field
+        // mammal fields
         private int numberOfTeeth;
         private int tailLength; // in centimeters
 
@@ -50,6 +50,10 @@ namespace CityZoo
 
         }
 
+        /// <summary>
+        /// Returns a string that represents the Mammal object.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{this.Id, -10} {this.Name, -20} {this.Age, -10} {this.Sex, -15} Has {this.numberOfTeeth} teeth. Tail {this.tailLength} cm long.";

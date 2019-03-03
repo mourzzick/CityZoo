@@ -87,9 +87,7 @@ namespace CityZoo
             this.Sex = Sex.Other;
         }
 
-        /// <summary>
-        /// Returns a string that represents the current object.
-        /// </summary>
+     
       
     }
 }

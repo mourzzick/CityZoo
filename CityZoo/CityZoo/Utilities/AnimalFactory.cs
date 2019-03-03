@@ -8,6 +8,12 @@ namespace CityZoo
 {
     static class AnimalFactory
     {
+        /// <summary>
+        /// Creates a mammal species.
+        /// </summary>
+        /// <param name="mammalSpecies"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Mammal CreateMammalSpecies(MammalSpecies mammalSpecies, int id)
         {
             switch (mammalSpecies)
@@ -21,6 +27,12 @@ namespace CityZoo
             }
         }
 
+        /// <summary>
+        /// Create a bird species.
+        /// </summary>
+        /// <param name="birdSpecies"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Bird CreateBirdSpecies(BirdSpecies birdSpecies, int id)
         {
             switch (birdSpecies)
@@ -34,9 +46,7 @@ namespace CityZoo
                 default:
                     return null;
             }
-
         }
-
 
 
     } // end class

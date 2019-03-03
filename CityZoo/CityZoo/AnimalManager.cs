@@ -20,16 +20,19 @@ namespace CityZoo
             }
         }
 
-
-
+        /// <summary>
+        /// Initializes a new instance of the BirdUserControl class.
+        /// </summary>
         public AnimalManager()
         {
             animalList = new List<Animal>();
-            animalId = 1;
-            
+            animalId = 0; // default animal id value
 
         }
 
+        /// <summary>
+        /// Gets the animal list.
+        /// </summary>
         public List<Animal> AnimalList // TODO: remake this to copy the list to array of strings
         {
             get
@@ -38,12 +41,10 @@ namespace CityZoo
             }
         }
 
-       
-       
-
-
-
-
+        /// <summary>
+        /// Adds animal to the animal manager.
+        /// </summary>
+        /// <param name="animal"></param>
         public void AddAnimal(Animal animal)
         {
             if (animal != null)
