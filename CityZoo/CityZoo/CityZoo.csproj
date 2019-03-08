@@ -46,9 +46,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserInterface\BudgerigarUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\BudgerigarUserControl.Designer.cs">
+      <DependentUpon>BudgerigarUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Species\Eagle.cs" />
     <Compile Include="Models\Species\Budgerigar.cs" />
-    <Compile Include="Models\Species\Cockatiel.cs" />
-    <Compile Include="Models\Species\Cockatoo.cs" />
+    <Compile Include="UserInterface\CatUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\CatUserControl.Designer.cs">
+      <DependentUpon>CatUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\DogUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\DogUserControl.Designer.cs">
+      <DependentUpon>DogUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\EagleUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\EagleUserControl.Designer.cs">
+      <DependentUpon>EagleUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\UserInput.cs" />
     <Compile Include="UserInterface\BirdUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,6 +107,15 @@
     <EmbeddedResource Include="UserInterface\BirdUserControl.resx">
       <DependentUpon>BirdUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\BudgerigarUserControl.resx">
+      <DependentUpon>BudgerigarUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\CatUserControl.resx">
+      <DependentUpon>CatUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\DogUserControl.resx">
+      <DependentUpon>DogUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,6 +131,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserInterface\EagleUserControl.resx">
+      <DependentUpon>EagleUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -8,31 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CityZoo.GUI
+namespace CityZoo.UserInterface
 {
-    public partial class BirdUserControl : UserControl
+    public partial class CatUserControl : UserControl
     {
         /// <summary>
-        /// Initializes a new instance of the BirdUserControl class.
+        /// Initializes a new instance of the CatUserControl class.
         /// </summary>
-        public BirdUserControl()
+        public CatUserControl()
         {
             InitializeComponent();
             Clear();
         }
 
         /// <summary>
-        /// Gets the Bird flying speed as an integer value.
+        /// Gets the cat tail length as an integer value.
         /// </summary>
-        public int FlyingSpeed
+        public int TailLength
         {
             get
             {
-                int flyingSpeed;
-                bool isSuccessful = Int32.TryParse(txtFlyingSpeed.Text.Trim(), out flyingSpeed);
+                int tailLength;
+                bool isSuccessful = Int32.TryParse(txtTailLength.Text.Trim(), out tailLength);
                 if (isSuccessful)
                 {
-                    return flyingSpeed;
+                    return tailLength;
                 }
                 else
                 {
@@ -42,13 +42,14 @@ namespace CityZoo.GUI
         }
 
         /// <summary>
-        /// Clears all BirdUserControl input controls
+        /// Clears all CatUserControl input controls
         /// </summary>
         public void Clear()
         {
-            txtFlyingSpeed.Text = string.Empty;
+            txtTailLength.Text = string.Empty;
         }
-
 
     } // end class
 }
+
+

@@ -9,8 +9,8 @@ namespace CityZoo
     // biological sex
     enum Sex
     {
-        Male,
         Female,
+        Male,
         Other // hermaphrodite or only one sex due to parthenogenesis
     }
 }

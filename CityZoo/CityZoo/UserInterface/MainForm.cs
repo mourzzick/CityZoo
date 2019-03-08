@@ -29,11 +29,39 @@ namespace CityZoo
         /// </summary>
         private void InitializeGUI()
         {
-            txtName.Text = string.Empty;
-            txtAge.Text = string.Empty;
+            HideUserControls();
+            ClearInput();
             PopulateSexListBox();
             PopulateCategoryListBox();
-            lblAnimalListHeader.Text = $"{"Id",-10} {"Name",-20} {"Age",-10} {"Sex",-15} {"Specification"}";
+            lblAnimalListHeader.Text = $"{"Id",-7}{"Name",-18}{"Age",-7}{"Sex",-10} {"Specification"}";
+        }
+
+        /// <summary>
+        /// Hides all user controls
+        /// </summary>
+        private void HideUserControls()
+        {
+            mammalUserControl.Hide();
+            birdUserControl.Hide();
+            budgerigarUserControl.Hide();
+            catUserControl.Hide();
+            dogUserControl.Hide();
+            eagleUserControl.Hide();
+        }
+
+        /// <summary>
+        /// Clears all input controls
+        /// </summary>
+        private void ClearInput()
+        {
+            txtName.Text = string.Empty;
+            txtAge.Text = string.Empty;
+            birdUserControl.Clear();
+            budgerigarUserControl.Clear();
+            catUserControl.Clear();
+            dogUserControl.Clear();
+            eagleUserControl.Clear();
+            mammalUserControl.Clear();
         }
 
         /// <summary>
@@ -43,7 +71,7 @@ namespace CityZoo
         {
             string[] sexValues = Enum.GetNames(typeof(Sex));
             lbSex.Items.AddRange(sexValues);
-            lbSex.SelectedIndex = (int)Sex.Other;
+            lbSex.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -53,31 +81,28 @@ namespace CityZoo
         {
             string[] categoryValues = Enum.GetNames(typeof(Category));
             lbCategory.Items.AddRange(categoryValues);
-            lbCategory.SelectedIndex = (int)Category.Mammal;
+            lbCategory.SelectedIndex = 0;
         }
 
         /// <summary>
-        /// Displays appropriate user control input and adds all values to the species
-        /// list-box based on the selected animal category.
+        /// Adds all values to the species list-box based on the selected animal category.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cboCategory_SelectedIndexChanged(object sender, EventArgs e)
+        private void lbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = lbCategory.SelectedIndex;
             if (index > -1)
             {
+                ClearInput();
                 lbSpecies.Items.Clear();
                 Category category = GetSelectedCategory();
                 PopulateSpeciesListBox(category);
-                ShowUserControl(category);
+                
             }
         }
 
         /// <summary>
         /// Adds all available values to the category list-box based on the animal category.
         /// </summary>
-        /// <param name="category"></param>
         private void PopulateSpeciesListBox(Category category)
         {
             string[] speciesValues;
@@ -85,36 +110,59 @@ namespace CityZoo
             switch (category)
             {
                 case Category.Mammal:
+                    gbAnimalSpecification.Text = "Mammal specification"; //TODO: might be better to create UpdateGUI method.
                     speciesValues = Enum.GetNames(typeof(MammalSpecies));
                     lbSpecies.Items.AddRange(speciesValues);
-                    lbSpecies.SelectedIndex = (int)MammalSpecies.Cat; //TODO: figure out how to remove this and deal with animal == null;
+                    lbSpecies.SelectedIndex = 0; //TODO: I don't like having default value but it prevents animal == null later on.
                     break;
                 case Category.Bird:
+                    gbAnimalSpecification.Text = "Bird specification"; //TODO: might be better to create UpdateGUI method.
                     speciesValues = Enum.GetNames(typeof(BirdSpecies));
                     lbSpecies.Items.AddRange(speciesValues);
-                    lbSpecies.SelectedIndex = (int)BirdSpecies.Budgerigar;
+                    lbSpecies.SelectedIndex = 0;
                     break;
             }
         }
 
         /// <summary>
-        /// Displays appropriate user control based on animal category.
+        /// Displays appropriate species user controls bases on selected species
         /// </summary>
-        /// <param name="category"></param>
-        private void ShowUserControl(Category category)
+        private void lbSpecies_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (category)
+            int index = lbSpecies.SelectedIndex;
+            if (index > -1)
             {
-                case Category.Mammal:
-                    birdUserControl.Hide();
-                    birdUserControl.Clear();
-                    mammalUserControl.Show();
-                    break;
+                ClearInput();
+                string species = lbSpecies.Text;
+                ShowUserControls(species);
+            }
+        }
 
-                case Category.Bird:
-                    mammalUserControl.Hide();
-                    mammalUserControl.Clear();
+        // TODO: I don't like that the methods user string as a parameter, perhaps AllSpecies enum? 
+        /// <summary>
+        /// Displays appropriate user control based on animal species.
+        /// </summary>
+        private void ShowUserControls(string species)
+        {
+            HideUserControls();
+
+            switch (species)
+            {
+                case "Budgerigar":
                     birdUserControl.Show();
+                    budgerigarUserControl.Show();
+                    break;
+                case "Cat":
+                    mammalUserControl.Show();
+                    catUserControl.Show();
+                    break;
+                case "Dog":
+                    mammalUserControl.Show();
+                    dogUserControl.Show();
+                    break;
+                case "Eagle":
+                    birdUserControl.Show();
+                    eagleUserControl.Show();
                     break;
             }
         }
@@ -122,41 +170,199 @@ namespace CityZoo
         /// <summary>
         /// Reads all input controls and adds a new animal to the animal manager.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnAddAnimal_Click(object sender, EventArgs e)
         {
-            if (lbCategory.SelectedIndex > -1)
+            if (lbCategory.SelectedIndex > -1 && IsValidUserInput())
             {
-                Category category = GetSelectedCategory();
                 Animal animal;
+                Category category = GetSelectedCategory();
+                UserInput userInput = new UserInput();
+                ReadUserInput(userInput);
+
                 switch (category)
                 {
                     case Category.Mammal:
-                        animal = AnimalFactory.CreateMammalSpecies(GetMammalSpecies(), animalManager.AnimalId); //TODO: find a good what to check for animal != null
-                        if (ReadInput(category, animal))
-                        {
-                            animalManager.AddAnimal(animal);
-                        }
+                        animal = AnimalFactory.CreateMammalSpecies(GetMammalSpecies(), userInput);
+                        animalManager.AddAnimal(animal);
                         break;
                     case Category.Bird:
-                        animal = AnimalFactory.CreateBirdSpecies(GetBirdSpecies(), animalManager.AnimalId);
-                        if (ReadInput(category, animal))
-                        {
-                            animalManager.AddAnimal(animal);
-
-                        }
+                        animal = AnimalFactory.CreateBirdSpecies(GetBirdSpecies(), userInput);
+                        animalManager.AddAnimal(animal);
                         break;
                 }
             }
             lbAnimals.Items.Clear();
             PopulateAnimalListBox();
         }
-     
+
+        /// <summary>
+        /// Reads all user input controls
+        /// </summary>
+        private void ReadUserInput(UserInput userInput)
+        {
+            userInput.Name = ReadName();
+            userInput.Age = ReadAge();
+            userInput.Sex = ReadSex();
+            userInput.NumberOfTeeth = ReadNumberOfTeeth();
+            userInput.FlyingSpeed = ReadFlyingSpeed();
+            userInput.TailLength = ReadTailLength();
+            userInput.Breed = ReadBreed();
+            userInput.Color = ReadColor();
+            userInput.Wingspan = ReadWingspan();
+        }
+
+        /// <summary>
+        /// Adds all animal records form the animal manager to the animal list-box.
+        /// </summary>
+        private void PopulateAnimalListBox()
+        {
+            lbAnimals.Items.AddRange(animalManager.GetAnimalList());
+        }
+
+
+        /// <summary>
+        /// Reads the name input control
+        /// </summary>
+        private string ReadName()
+        {
+            return txtName.Text.Trim();
+        }
+
+        /// <summary>
+        /// Reads the age input control
+        /// </summary>
+        private double ReadAge()
+        {
+            double age;
+            bool isSuccessful = double.TryParse(txtAge.Text.Trim(), out age);
+            if (isSuccessful)
+            {
+                return age;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Reads the sex input control
+        /// </summary>
+        private Sex ReadSex()
+        {
+            return (Sex)lbSex.SelectedIndex;
+        }
+
+        /// <summary>
+        /// Reads the number of teeth input control
+        /// </summary>
+        private int ReadNumberOfTeeth()
+        {
+            return mammalUserControl.NumberOfTheet;
+        }
+
+        /// <summary>
+        /// Reads the flying speed input control
+        /// </summary>
+        private int ReadFlyingSpeed()
+        {
+            return birdUserControl.FlyingSpeed;
+        }
+
+        /// <summary>
+        /// Reads the tail length input control
+        /// </summary>
+        private int ReadTailLength()
+        {
+            return catUserControl.TailLength;
+        }
+
+        /// <summary>
+        /// Reads the breed input control
+        /// </summary>
+        private string ReadBreed()
+        {
+            return dogUserControl.Breed;
+        }
+
+        /// <summary>
+        /// Reads the color input control
+        /// </summary>
+        private string ReadColor()
+        {
+            return budgerigarUserControl.Color;
+        }
+
+        /// <summary>
+        /// Reads the number wingspan input control
+        /// </summary>
+        private int ReadWingspan()
+        {
+            return eagleUserControl.Wingspan; 
+        }
+
+        // TODO: This validation method turned into spaghetti. It will be good to come up with
+        // something different. https://www.youtube.com/watch?v=akj8W1QvbGI
+        /// <summary>
+        /// Validates all but sex user input
+        /// </summary>
+        private bool IsValidUserInput()
+        {
+            bool isValidName = !string.IsNullOrEmpty(ReadName());
+            if (!isValidName)
+            {
+                MessageBox.Show("Please enter a valid name.");
+            }
+            bool isVlaidAge = (ReadAge() > 0);
+            if (!isVlaidAge)
+            {
+                MessageBox.Show("Please enter a valid age.");
+            }
+
+            bool isVlaidNumberOfTeeth = true;
+            if (mammalUserControl.Visible && ReadNumberOfTeeth() < 0)
+            {
+                isVlaidNumberOfTeeth = false;
+                MessageBox.Show("Please enter valid number of teeth.");
+            }
+            bool isVlaidFlyingSpeed = true;
+            if (birdUserControl.Visible && ReadFlyingSpeed() < 0)
+            {
+                isVlaidFlyingSpeed = false;
+                MessageBox.Show("Please enter valid flying speed.");
+            }
+            bool isValidTailLength = true;
+            if (catUserControl.Visible && ReadTailLength() < 0)
+            {
+                isValidTailLength = false;
+                MessageBox.Show("Please enter valid tail length."); 
+            }
+            bool isValidBreed = true;
+            if (dogUserControl.Visible && string.IsNullOrEmpty(ReadBreed()))
+            {
+                isValidBreed = false;
+                MessageBox.Show("Please enter valid breed.");
+            }
+            bool isValidColor = true;
+            if (budgerigarUserControl.Visible && string.IsNullOrEmpty(ReadColor()))
+            {
+                isValidColor = false;
+                MessageBox.Show("Please enter valid color.");
+            }
+            bool isValidWingspan = true;
+            if (eagleUserControl.Visible && ReadWingspan() < 0)
+            {
+                isValidWingspan = false;
+                MessageBox.Show("Please enter valid wingspan.");
+            }
+
+            return isValidName && isVlaidAge && isVlaidNumberOfTeeth && isVlaidFlyingSpeed &&
+                isValidTailLength && isValidBreed && isValidColor && isValidWingspan;
+        }
+
         /// <summary>
         /// Gets the selected animal category.
         /// </summary>
-        /// <returns></returns>
         private Category GetSelectedCategory()
         {
             Category category = (Category)lbCategory.SelectedIndex;
@@ -166,7 +372,6 @@ namespace CityZoo
         /// <summary>
         /// Gets the selected mammal species.
         /// </summary>
-        /// <returns></returns>
         private MammalSpecies GetMammalSpecies()
         {
             MammalSpecies species = (MammalSpecies)lbSpecies.SelectedIndex;
@@ -176,169 +381,10 @@ namespace CityZoo
         /// <summary>
         /// Gets the selected bird species.
         /// </summary>
-        /// <returns></returns>
         private BirdSpecies GetBirdSpecies()
         {
             BirdSpecies species = (BirdSpecies)lbSpecies.SelectedIndex;
             return species;
-        }
-
-        /// <summary>
-        /// Reads all input controls.
-        /// </summary>
-        /// <param name="category"></param>
-        /// <param name="animal"></param>
-        /// <returns></returns>
-        private bool ReadInput(Category category, Animal animal)
-        {
-            bool isSuccessful = false;
-            bool isValidName = ReadName(animal);
-            bool isValidAge = ReadAge(animal);
-            bool isValidSex = ReadSex(animal);
-            bool isValidSpecification = ReadSpecifications(category, animal);
-
-            if (isValidName && isValidAge && isValidSex && isValidSpecification)
-            {
-                isSuccessful = true;
-            }
-            return isSuccessful;
-        }
-
-        /// <summary>
-        /// Reads the name input control.
-        /// </summary>
-        /// <param name="animal"></param>
-        /// <returns></returns>
-        private bool ReadName(Animal animal)
-        {
-            bool isSuccessful = false;
-
-            string name = txtName.Text.Trim();
-            if (!string.IsNullOrEmpty(name))
-            {
-                animal.Name = name;
-                isSuccessful = true;
-            }
-            else
-            {
-                MessageBox.Show("Please add animal name.");
-            }
-            return isSuccessful;
-        }
-
-        /// <summary>
-        /// Reads the age input control.
-        /// </summary>
-        /// <param name="animal"></param>
-        /// <returns></returns>
-        private bool ReadAge(Animal animal)
-        {
-            bool isSuccessful = false;
-
-            double age;
-            bool isDouble = Double.TryParse(txtAge.Text.Trim(), out age);
-            if (isDouble)
-            {
-                animal.Age = age;
-                isSuccessful = true;
-            }
-            else
-            {
-                MessageBox.Show("Please add valid animal age.");
-            }
-            return isSuccessful;
-        }
-
-        /// <summary>
-        /// Reads the sex input control
-        /// </summary>
-        /// <param name="animal"></param>
-        /// <returns></returns>
-        private bool ReadSex(Animal animal)
-        {
-            bool isSuccessful = false;
-
-            if (lbSex.SelectedIndex > -1)
-            {
-                animal.Sex = (Sex)lbSex.SelectedIndex;
-                isSuccessful = true;
-            }
-            return isSuccessful;
-        }
-
-        /// <summary>
-        /// Adds all animal records form the animal manager to the animal list-box.
-        /// </summary>
-        private void PopulateAnimalListBox()
-        {
-            lbAnimals.Items.AddRange(animalManager.AnimalList.ToArray());
-        }
-
-        /// <summary>
-        /// Reads the animal specification information based on the selected category
-        /// </summary>
-        /// <param name="category"></param>
-        /// <param name="animal"></param>
-        /// <returns></returns>
-        private bool ReadSpecifications(Category category, Animal animal)
-        {
-            switch (category)
-            {
-                case Category.Mammal:
-                    return ReadMammalSpecifications(animal);
-                case Category.Bird:
-                    return ReadBirdSpecification(animal);
-                default:
-                    return false;
-            }
-        }
-
-        /// <summary>
-        /// Reads the mammal user control input
-        /// </summary>
-        /// <param name="animal"></param>
-        /// <returns></returns>
-        private bool ReadMammalSpecifications(Animal animal)
-        {
-            bool isSuccessful = false;
-            int numberOfTeeth = mammalUserControl.NumberOfTheet;
-            int tailLenght = mammalUserControl.TailLength;
-
-            if (numberOfTeeth > -1 && tailLenght > -1)
-            {
-                ((Mammal)animal).NumberOfTeeth = numberOfTeeth;
-                ((Mammal)animal).TailLength = tailLenght;
-                isSuccessful = true;
-            }
-            else
-            {
-                MessageBox.Show("Please add number of teeth and tail length.");
-            }
-            return isSuccessful;
-        }
-
-        /// <summary>
-        /// Reads the bird user control input
-        /// </summary>
-        /// <param name="animal"></param>
-        /// <returns></returns>
-        private bool ReadBirdSpecification(Animal animal)
-        {
-            bool isSuccessful = false;
-            int flyingSpeed = birdUserControl.FlyingSpeed;
-            int wingspan = birdUserControl.Wingspan;
-
-            if (flyingSpeed > -1 && wingspan > -1)
-            {
-                ((Bird)animal).FlyingSpeed = flyingSpeed;
-                ((Bird)animal).Wingspan = wingspan;
-                isSuccessful = true;
-            }
-            else
-            {
-                MessageBox.Show("Please add number of flying speed and wingspan.");
-            }
-            return isSuccessful;
         }
 
 

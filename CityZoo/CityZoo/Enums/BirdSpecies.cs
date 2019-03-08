@@ -9,7 +9,6 @@ namespace CityZoo
     enum BirdSpecies
     {
         Budgerigar,
-        Cockatiel,
-        Cockatoo
+        Eagle
     }
 }

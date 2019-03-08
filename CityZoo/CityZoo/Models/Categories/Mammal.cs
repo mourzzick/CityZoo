@@ -10,58 +10,31 @@ namespace CityZoo
     {
         // mammal fields
         private int numberOfTeeth;
-        private int tailLength; // in centimeters
-
+       
         /// <summary>
-        /// Gets or sets the Mammal number of teeth.
+        /// Gets or sets the mammal number of teeth.
         /// </summary>
         public int NumberOfTeeth
         {
             get { return numberOfTeeth; }
-            set
-            {
-                if (value > 0)
-                {
-                    numberOfTeeth = value;
-                }
-            }
+            set { numberOfTeeth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the Mammal tail length.
+        /// Initializes a new instance of the mammal class.
         /// </summary>
-        public int TailLength
+        public Mammal(string name, double age, Sex sex, int numberOfTeeth) : base(name, age, sex)
         {
-            get { return tailLength; }
-            set
-            {
-                if (value > 0)
-                {
-                    tailLength = value;
-                }
-            }
+            this.NumberOfTeeth = numberOfTeeth;
         }
 
         /// <summary>
-        /// Initializes a new instance of the Mammal class.
+        /// Returns a string that represents the mammal object.
         /// </summary>
-        public Mammal(int id) : base(id)
-        {
-
-        }
-
-        /// <summary>
-        /// Returns a string that represents the Mammal object.
-        /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
-            return $"{this.Id, -10} {this.Name, -20} {this.Age, -10} {this.Sex, -15} Has {this.numberOfTeeth} teeth. Tail {this.tailLength} cm long.";
+            return $"{base.ToString()} Has {this.NumberOfTeeth} teeth.";
         }
-
-
-
-
 
 
     } // end class

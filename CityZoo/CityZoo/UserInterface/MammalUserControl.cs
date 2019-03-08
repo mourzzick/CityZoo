@@ -43,32 +43,11 @@ namespace CityZoo.GUI
         }
 
         /// <summary>
-        /// Gets the Mammal tail length as an integer value.
-        /// </summary>
-        public int TailLength
-        {
-            get
-            {
-                int tailLenght;
-                bool isSuccessful = Int32.TryParse(txtTailLength.Text.Trim(), out tailLenght);
-                if (isSuccessful)
-                {
-                    return tailLenght;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-        }
-
-        /// <summary>
         /// Clears all MammalUserControl input controls
         /// </summary>
         public void Clear()
         {
             txtNumberOfTeeth.Text = string.Empty;
-            txtTailLength.Text = string.Empty;
         }
 
 

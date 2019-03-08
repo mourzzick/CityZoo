@@ -11,15 +11,6 @@ namespace CityZoo
         private List<Animal> animalList;
         private int animalId;
 
-        public int AnimalId
-        {
-            get
-            {
-                animalId++;
-                return animalId;
-            }
-        }
-
         /// <summary>
         /// Initializes a new instance of the BirdUserControl class.
         /// </summary>
@@ -31,26 +22,56 @@ namespace CityZoo
         }
 
         /// <summary>
-        /// Gets the animal list.
+        /// Generates new animal id.
         /// </summary>
-        public List<Animal> AnimalList // TODO: remake this to copy the list to array of strings
+        private int GenerateAnimalId()
         {
-            get
+            animalId++;
+            return animalId;
+        }
+
+        /// <summary>
+        /// Gets the animal list as a string array.
+        /// </summary>
+        public string[] GetAnimalList()
+        {
+            int numberOfItems = animalList.Count;
+            string[] output = new string[numberOfItems];
+            for (int i = 0; i < numberOfItems; i++)
             {
-                return animalList;
+                output[i] = animalList[i].ToString();
+            }
+            return output;
+        }
+
+        /// <summary>
+        /// Gets the animal at the specified index position.
+        /// </summary>
+        public Animal GetAnimalAt(int index) // TODO: I don't like returning the animal reference
+        {
+            if (index >= 0 && index < animalList.Count)
+            {
+                Animal animal = animalList[index];
+                return animal;
+            }
+            else
+            {
+                return null;
             }
         }
 
         /// <summary>
-        /// Adds animal to the animal manager.
+        /// Adds an animal to the animal manager, adds animal id.
         /// </summary>
-        /// <param name="animal"></param>
         public void AddAnimal(Animal animal)
         {
             if (animal != null)
             {
+                animal.Id = GenerateAnimalId();
                 animalList.Add(animal);
             }
         }
-    }
+
+
+    } // end class
 }

@@ -11,17 +11,14 @@ namespace CityZoo
         /// <summary>
         /// Creates a mammal species.
         /// </summary>
-        /// <param name="mammalSpecies"></param>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public static Mammal CreateMammalSpecies(MammalSpecies mammalSpecies, int id)
+        public static Mammal CreateMammalSpecies(MammalSpecies mammalSpecies, UserInput userInput)
         {
             switch (mammalSpecies)
             {
                 case MammalSpecies.Dog:
-                    return new Dog(id);
+                    return new Dog(userInput.Name, userInput.Age, userInput.Sex, userInput.NumberOfTeeth, userInput.Breed);
                 case MammalSpecies.Cat:
-                    return new Cat(id);
+                    return new Cat(userInput.Name, userInput.Age, userInput.Sex, userInput.NumberOfTeeth, userInput.TailLength);
                 default:
                     return null;
             }
@@ -30,19 +27,14 @@ namespace CityZoo
         /// <summary>
         /// Create a bird species.
         /// </summary>
-        /// <param name="birdSpecies"></param>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public static Bird CreateBirdSpecies(BirdSpecies birdSpecies, int id)
+        public static Bird CreateBirdSpecies(BirdSpecies birdSpecies, UserInput userInput)
         {
             switch (birdSpecies)
             {
                 case BirdSpecies.Budgerigar:
-                    return new Budgerigar(id);
-                case BirdSpecies.Cockatiel:
-                    return new Cockatiel(id);
-                case BirdSpecies.Cockatoo:
-                    return new Cockatoo(id);
+                    return new Budgerigar(userInput.Name, userInput.Age, userInput.Sex, userInput.FlyingSpeed, userInput.Color);
+                case BirdSpecies.Eagle:
+                    return new Eagle(userInput.Name, userInput.Age, userInput.Sex, userInput.FlyingSpeed, userInput.Wingspan);
                 default:
                     return null;
             }
