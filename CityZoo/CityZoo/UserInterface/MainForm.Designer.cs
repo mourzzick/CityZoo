@@ -269,6 +269,7 @@
             // 
             this.lbAnimals.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAnimals.FormattingEnabled = true;
+            this.lbAnimals.HorizontalScrollbar = true;
             this.lbAnimals.ItemHeight = 19;
             this.lbAnimals.Location = new System.Drawing.Point(14, 51);
             this.lbAnimals.Name = "lbAnimals";

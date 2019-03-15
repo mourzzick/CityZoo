@@ -8,6 +8,8 @@ namespace CityZoo
 {
     class UserInput
     {
+        // TODO: I'm unsure what type of data is this object suppose to carry.
+        // Is it just text form input controls or appropriate types for each model object.
         public string Name { get; set; }
         public double Age { get; set; }
         public Sex Sex { get; set; }

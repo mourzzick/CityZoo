@@ -8,6 +8,8 @@ namespace CityZoo
 {
     static class AnimalFactory
     {
+        // TODO: I don't see the benefit of having constructors with all parameters. Now I have to 
+        // deal with the "UserInput" which carries around a lot of unnecessary information.
         /// <summary>
         /// Creates a mammal species.
         /// </summary>
