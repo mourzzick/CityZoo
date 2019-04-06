@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\EaterType.cs" />
-    <Compile Include="FoodSchedule.cs" />
+    <Compile Include="Models\FoodSchedule.cs" />
     <Compile Include="Contracts\IAnimal.cs" />
     <Compile Include="UserInterface\BudgerigarUserControl.cs">
       <SubType>UserControl</SubType>
@@ -90,7 +90,7 @@
     </Compile>
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Utilities\AnimalFactory.cs" />
-    <Compile Include="AnimalManager.cs" />
+    <Compile Include="Models\AnimalManager.cs" />
     <Compile Include="Models\Categories\Bird.cs" />
     <Compile Include="Enums\BirdSpecies.cs" />
     <Compile Include="Models\Species\Cat.cs" />

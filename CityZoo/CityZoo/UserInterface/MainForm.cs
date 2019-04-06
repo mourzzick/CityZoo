@@ -438,7 +438,6 @@ namespace CityZoo
             }
         }
 
-
         // TODO: implement the method when fixing the check-box feature.
         //private void PopulateAllSpeciesListBox()
         //{
