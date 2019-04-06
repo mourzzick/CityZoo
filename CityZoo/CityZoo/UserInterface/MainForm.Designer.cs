@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pbImage = new System.Windows.Forms.PictureBox();
+            this.pbAnimalImage = new System.Windows.Forms.PictureBox();
             this.btnAddImage = new System.Windows.Forms.Button();
             this.gbAnimalSpecification = new System.Windows.Forms.GroupBox();
             this.btnAddAnimal = new System.Windows.Forms.Button();
@@ -56,9 +56,9 @@
             this.budgerigarUserControl = new CityZoo.Models.Species.BudgerigarUserControl();
             this.eagleUserControl = new CityZoo.UserInterface.EagleUserControl();
             this.dogUserControl = new CityZoo.UserInterface.DogUserControl();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chbListAllAnimals = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnimalImage)).BeginInit();
             this.gbAnimalSpecification.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -66,8 +66,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.pbImage);
+            this.groupBox1.Controls.Add(this.chbListAllAnimals);
+            this.groupBox1.Controls.Add(this.pbAnimalImage);
             this.groupBox1.Controls.Add(this.btnAddImage);
             this.groupBox1.Controls.Add(this.gbAnimalSpecification);
             this.groupBox1.Controls.Add(this.btnAddAnimal);
@@ -91,12 +91,12 @@
             // 
             // pbImage
             // 
-            this.pbImage.Location = new System.Drawing.Point(704, 100);
-            this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(210, 210);
-            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbImage.TabIndex = 12;
-            this.pbImage.TabStop = false;
+            this.pbAnimalImage.Location = new System.Drawing.Point(704, 100);
+            this.pbAnimalImage.Name = "pbImage";
+            this.pbAnimalImage.Size = new System.Drawing.Size(210, 210);
+            this.pbAnimalImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAnimalImage.TabIndex = 12;
+            this.pbAnimalImage.TabStop = false;
             // 
             // btnAddImage
             // 
@@ -351,16 +351,18 @@
             this.dogUserControl.Size = new System.Drawing.Size(334, 51);
             this.dogUserControl.TabIndex = 4;
             // 
-            // checkBox1
+            // chbListAllAnimals
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(704, 346);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(106, 24);
-            this.checkBox1.TabIndex = 13;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chbListAllAnimals.AutoSize = true;
+            this.chbListAllAnimals.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbListAllAnimals.Location = new System.Drawing.Point(704, 346);
+            this.chbListAllAnimals.Name = "chbListAllAnimals";
+            this.chbListAllAnimals.Size = new System.Drawing.Size(134, 24);
+            this.chbListAllAnimals.TabIndex = 13;
+            this.chbListAllAnimals.Text = "List All Animals";
+            this.chbListAllAnimals.UseVisualStyleBackColor = true;
+            // TODO: delete or uncomment this line when the chbListAllAnimals_CheckedChanged method is done.
+            //this.chbListAllAnimals.CheckedChanged += new System.EventHandler(this.chbListAllAnimals_CheckedChanged);
             // 
             // MainForm
             // 
@@ -374,7 +376,7 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnimalImage)).EndInit();
             this.gbAnimalSpecification.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -408,13 +410,13 @@
         private Models.Species.BudgerigarUserControl budgerigarUserControl;
         private UserInterface.EagleUserControl eagleUserControl;
         private UserInterface.DogUserControl dogUserControl;
-        private System.Windows.Forms.PictureBox pbImage;
+        private System.Windows.Forms.PictureBox pbAnimalImage;
         private System.Windows.Forms.Button btnAddImage;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtEaterType;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtFoodSchedule;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chbListAllAnimals;
     }
 }
 

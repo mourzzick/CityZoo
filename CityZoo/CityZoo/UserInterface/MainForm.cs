@@ -33,6 +33,7 @@ namespace CityZoo
             ClearInput();
             PopulateSexListBox();
             PopulateCategoryListBox();
+            chbListAllAnimals.Checked = false;
             lblAnimalListHeader.Text = $"{"Id",-7}{"Name",-18}{"Age",-7}{"Sex",-10} {"Specification"}";
         }
 
@@ -85,9 +86,17 @@ namespace CityZoo
         }
 
         /// <summary>
-        /// Adds all values to the species list-box based on the selected animal category.
+        /// Adds appropriate species to the species list-box on category list-box index change.
         /// </summary>
         private void lbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateSpeciesListBox();
+        }
+
+        /// <summary>
+        /// Updates the species list-box bases on selected category.
+        /// </summary>
+        private void UpdateSpeciesListBox()
         {
             int index = lbCategory.SelectedIndex;
             if (index > -1)
@@ -96,9 +105,26 @@ namespace CityZoo
                 lbSpecies.Items.Clear();
                 Category category = GetSelectedCategory();
                 PopulateSpeciesListBox(category);
-                
             }
         }
+
+        /// <summary>
+        /// Shows all species in the species list-box and disables the category list-box
+        /// </summary>
+        // TODO: Implement this method correctly 
+        //private void chbListAllAnimals_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (chbListAllAnimals.Checked)
+        //    {
+        //        lbCategory.Enabled = false;
+        //        PopulateAllSpeciesListBox();
+        //    }
+        //    else
+        //    {
+        //        lbCategory.Enabled = true;
+        //        UpdateSpeciesListBox();
+        //    }
+        //}
 
         /// <summary>
         /// Adds all available values to the category list-box based on the animal category.
@@ -298,7 +324,7 @@ namespace CityZoo
         /// </summary>
         private int ReadWingspan()
         {
-            return eagleUserControl.Wingspan; 
+            return eagleUserControl.Wingspan;
         }
 
         // TODO: This validation method turned into spaghetti. It will be good to come up with
@@ -335,7 +361,7 @@ namespace CityZoo
             if (catUserControl.Visible && ReadTailLength() < 0)
             {
                 isValidTailLength = false;
-                MessageBox.Show("Please enter valid tail length."); 
+                MessageBox.Show("Please enter valid tail length.");
             }
             bool isValidBreed = true;
             if (dogUserControl.Visible && string.IsNullOrEmpty(ReadBreed()))
@@ -399,19 +425,39 @@ namespace CityZoo
             }
         }
 
+        /// <summary>
+        /// Adds animal image to the animalImage picture-box
+        /// </summary>
         private void btnAddImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Choose Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
-
-
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                pbImage.Image = Image.FromFile(fileDialog.FileName);
-
+                pbAnimalImage.Image = Image.FromFile(fileDialog.FileName);
             }
-           
-
         }
+
+
+        // TODO: implement the method when fixing the check-box feature.
+        //private void PopulateAllSpeciesListBox()
+        //{
+        //    lbSpecies.Items.Clear();
+        //    lbSpecies.Items.AddRange(GetAllSpecies());
+        //}
+
+        /// <summary>
+        /// Gets all animal species
+        /// </summary>
+        // TODO: implement the method when fixing the check-box feature.
+        //private string[] GetAllSpecies()
+        //{
+        //    List<string> speciesValues = new List<string>();
+        //    speciesValues.AddRange(Enum.GetNames(typeof(MammalSpecies)).ToList());
+        //    speciesValues.AddRange(Enum.GetNames(typeof(BirdSpecies)).ToList());
+        //    return speciesValues.ToArray();
+        //}
+
+
     } // end class
 }
