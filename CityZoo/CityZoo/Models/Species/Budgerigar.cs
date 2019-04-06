@@ -10,7 +10,9 @@ namespace CityZoo
     {
         private string color;
 
-        // Gets and sets the bird's color
+        /// <summary>
+        /// Gets and sets the bird's color
+        /// </summary>
         public string Color
         {
             get { return color; }
@@ -26,6 +28,34 @@ namespace CityZoo
         }
 
         /// <summary>
+        /// Gets the name of the species
+        /// </summary>
+        // TODO: looks like this method fits better in the Animal class
+        public override string GetSpecies()
+        {
+            return this.GetType().Name; 
+        }
+
+        /// <summary>
+        /// Gets the eater type of the species
+        /// </summary>
+        public override EaterType GetEaterType()
+        {
+            return EaterType.Omnivorus;
+        }
+
+        /// <summary>
+        /// Gets species food schedule
+        /// </summary>
+        public override FoodSchedule GetFoodSchedule()
+        {
+            FoodSchedule foodSchedule = new FoodSchedule();
+            foodSchedule.AddFoodScheduleItem("Morning: seeds");
+            foodSchedule.AddFoodScheduleItem("Lunch: insects");
+            return foodSchedule;
+        }
+
+        /// <summary>
         /// Returns a string that represents the budgerigar object.
         /// </summary>
         public override string ToString()
@@ -34,5 +64,6 @@ namespace CityZoo
         }
 
 
+       
     } // end class
 }

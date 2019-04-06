@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CityZoo
 {
-    class Animal
+    abstract class Animal : IAnimal
     {
         // Animal fields
         private int id;
@@ -71,14 +71,28 @@ namespace CityZoo
         }
 
         /// <summary>
+        /// Gets the animal eater type
+        /// </summary>
+        public abstract EaterType GetEaterType();
+
+        /// <summary>
+        /// Gets the animal food schedule
+        /// </summary>
+        public abstract FoodSchedule GetFoodSchedule();
+     
+        /// <summary>
+        /// Gets the animal species
+        /// </summary>
+        public abstract string GetSpecies();
+
+        /// <summary>
         /// Returns a string that represents the animal object.
         /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
             return $"{this.Id,-7}{this.Name,-18}{this.Age,-7}{this.Sex,-10}";
         }
 
-
+        
     } // end class
 }

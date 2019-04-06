@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CityZoo
 {
-    class Bird : Animal
+    abstract class Bird : Animal
     {
         // bird fields
         private int flyingSpeed; // unit km/h

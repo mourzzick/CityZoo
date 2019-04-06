@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CityZoo
 {
-    class Mammal : Animal
+    abstract class Mammal : Animal
     {
         // mammal fields
         private int numberOfTeeth;

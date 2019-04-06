@@ -387,6 +387,31 @@ namespace CityZoo
             return species;
         }
 
+        private void lbAnimals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = lbAnimals.SelectedIndex;
+            if (index > -1)
+            {
+                Animal animal = animalManager.GetAnimalAt(index);
+                txtEaterType.Text = animal.GetEaterType().ToString();
+                txtFoodSchedule.Text = (animal.GetFoodSchedule().ToString());
 
+            }
+        }
+
+        private void btnAddImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Choose Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pbImage.Image = Image.FromFile(fileDialog.FileName);
+
+            }
+           
+
+        }
     } // end class
 }
