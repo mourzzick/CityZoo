@@ -438,6 +438,21 @@ namespace CityZoo
             }
         }
 
+        private void btnDeleteAnimal_Click(object sender, EventArgs e)
+        {
+
+            int index = lbAnimals.SelectedIndex;
+            if (index > -1)
+            {
+                bool isDeleted = animalManager.DeleteAt(index);
+                if (isDeleted)
+                {
+                    lbAnimals.Items.Clear();
+                    PopulateAnimalListBox();
+                }
+            }
+        }
+
         // TODO: implement the method when fixing the check-box feature.
         //private void PopulateAllSpeciesListBox()
         //{

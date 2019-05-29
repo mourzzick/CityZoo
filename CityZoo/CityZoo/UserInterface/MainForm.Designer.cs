@@ -29,9 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chbListAllAnimals = new System.Windows.Forms.CheckBox();
             this.pbAnimalImage = new System.Windows.Forms.PictureBox();
             this.btnAddImage = new System.Windows.Forms.Button();
             this.gbAnimalSpecification = new System.Windows.Forms.GroupBox();
+            this.mammalUserControl = new CityZoo.GUI.MammalUserControl();
+            this.birdUserControl = new CityZoo.GUI.BirdUserControl();
+            this.catUserControl = new CityZoo.UserInterface.CatUserControl();
+            this.budgerigarUserControl = new CityZoo.Models.Species.BudgerigarUserControl();
+            this.eagleUserControl = new CityZoo.UserInterface.EagleUserControl();
+            this.dogUserControl = new CityZoo.UserInterface.DogUserControl();
             this.btnAddAnimal = new System.Windows.Forms.Button();
             this.lbSpecies = new System.Windows.Forms.ListBox();
             this.lbCategory = new System.Windows.Forms.ListBox();
@@ -47,16 +54,10 @@
             this.lblAnimalListHeader = new System.Windows.Forms.Label();
             this.lbAnimals = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtFoodSchedule = new System.Windows.Forms.TextBox();
             this.txtEaterType = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtFoodSchedule = new System.Windows.Forms.TextBox();
-            this.mammalUserControl = new CityZoo.GUI.MammalUserControl();
-            this.birdUserControl = new CityZoo.GUI.BirdUserControl();
-            this.catUserControl = new CityZoo.UserInterface.CatUserControl();
-            this.budgerigarUserControl = new CityZoo.Models.Species.BudgerigarUserControl();
-            this.eagleUserControl = new CityZoo.UserInterface.EagleUserControl();
-            this.dogUserControl = new CityZoo.UserInterface.DogUserControl();
-            this.chbListAllAnimals = new System.Windows.Forms.CheckBox();
+            this.btnDeleteAnimal = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAnimalImage)).BeginInit();
             this.gbAnimalSpecification.SuspendLayout();
@@ -89,10 +90,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Animal Specifications";
             // 
-            // pbImage
+            // chbListAllAnimals
+            // 
+            this.chbListAllAnimals.AutoSize = true;
+            this.chbListAllAnimals.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbListAllAnimals.Location = new System.Drawing.Point(704, 346);
+            this.chbListAllAnimals.Name = "chbListAllAnimals";
+            this.chbListAllAnimals.Size = new System.Drawing.Size(134, 24);
+            this.chbListAllAnimals.TabIndex = 13;
+            this.chbListAllAnimals.Text = "List All Animals";
+            this.chbListAllAnimals.UseVisualStyleBackColor = true;
+            // 
+            // pbAnimalImage
             // 
             this.pbAnimalImage.Location = new System.Drawing.Point(704, 100);
-            this.pbAnimalImage.Name = "pbImage";
+            this.pbAnimalImage.Name = "pbAnimalImage";
             this.pbAnimalImage.Size = new System.Drawing.Size(210, 210);
             this.pbAnimalImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAnimalImage.TabIndex = 12;
@@ -123,6 +135,48 @@
             this.gbAnimalSpecification.TabIndex = 11;
             this.gbAnimalSpecification.TabStop = false;
             this.gbAnimalSpecification.Text = "gbAnimalSpecification";
+            // 
+            // mammalUserControl
+            // 
+            this.mammalUserControl.Location = new System.Drawing.Point(6, 22);
+            this.mammalUserControl.Name = "mammalUserControl";
+            this.mammalUserControl.Size = new System.Drawing.Size(334, 51);
+            this.mammalUserControl.TabIndex = 0;
+            // 
+            // birdUserControl
+            // 
+            this.birdUserControl.Location = new System.Drawing.Point(6, 22);
+            this.birdUserControl.Name = "birdUserControl";
+            this.birdUserControl.Size = new System.Drawing.Size(334, 51);
+            this.birdUserControl.TabIndex = 1;
+            // 
+            // catUserControl
+            // 
+            this.catUserControl.Location = new System.Drawing.Point(6, 79);
+            this.catUserControl.Name = "catUserControl";
+            this.catUserControl.Size = new System.Drawing.Size(334, 51);
+            this.catUserControl.TabIndex = 3;
+            // 
+            // budgerigarUserControl
+            // 
+            this.budgerigarUserControl.Location = new System.Drawing.Point(6, 79);
+            this.budgerigarUserControl.Name = "budgerigarUserControl";
+            this.budgerigarUserControl.Size = new System.Drawing.Size(334, 51);
+            this.budgerigarUserControl.TabIndex = 2;
+            // 
+            // eagleUserControl
+            // 
+            this.eagleUserControl.Location = new System.Drawing.Point(6, 79);
+            this.eagleUserControl.Name = "eagleUserControl";
+            this.eagleUserControl.Size = new System.Drawing.Size(334, 51);
+            this.eagleUserControl.TabIndex = 5;
+            // 
+            // dogUserControl
+            // 
+            this.dogUserControl.Location = new System.Drawing.Point(6, 79);
+            this.dogUserControl.Name = "dogUserControl";
+            this.dogUserControl.Size = new System.Drawing.Size(334, 51);
+            this.dogUserControl.TabIndex = 4;
             // 
             // btnAddAnimal
             // 
@@ -240,7 +294,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 461);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1412, 322);
+            this.groupBox3.Size = new System.Drawing.Size(1412, 289);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "List of Registered Animals";
@@ -280,6 +334,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Feeding Schedule";
             // 
+            // txtFoodSchedule
+            // 
+            this.txtFoodSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFoodSchedule.Location = new System.Drawing.Point(10, 100);
+            this.txtFoodSchedule.Multiline = true;
+            this.txtFoodSchedule.Name = "txtFoodSchedule";
+            this.txtFoodSchedule.ReadOnly = true;
+            this.txtFoodSchedule.Size = new System.Drawing.Size(451, 264);
+            this.txtFoodSchedule.TabIndex = 2;
+            // 
             // txtEaterType
             // 
             this.txtEaterType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -299,76 +363,23 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Eater Type";
             // 
-            // txtFoodSchedule
+            // btnDeleteAnimal
             // 
-            this.txtFoodSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFoodSchedule.Location = new System.Drawing.Point(10, 100);
-            this.txtFoodSchedule.Multiline = true;
-            this.txtFoodSchedule.Name = "txtFoodSchedule";
-            this.txtFoodSchedule.ReadOnly = true;
-            this.txtFoodSchedule.Size = new System.Drawing.Size(451, 264);
-            this.txtFoodSchedule.TabIndex = 2;
-            // 
-            // mammalUserControl
-            // 
-            this.mammalUserControl.Location = new System.Drawing.Point(6, 22);
-            this.mammalUserControl.Name = "mammalUserControl";
-            this.mammalUserControl.Size = new System.Drawing.Size(334, 51);
-            this.mammalUserControl.TabIndex = 0;
-            // 
-            // birdUserControl
-            // 
-            this.birdUserControl.Location = new System.Drawing.Point(6, 22);
-            this.birdUserControl.Name = "birdUserControl";
-            this.birdUserControl.Size = new System.Drawing.Size(334, 51);
-            this.birdUserControl.TabIndex = 1;
-            // 
-            // catUserControl
-            // 
-            this.catUserControl.Location = new System.Drawing.Point(6, 79);
-            this.catUserControl.Name = "catUserControl";
-            this.catUserControl.Size = new System.Drawing.Size(334, 51);
-            this.catUserControl.TabIndex = 3;
-            // 
-            // budgerigarUserControl
-            // 
-            this.budgerigarUserControl.Location = new System.Drawing.Point(6, 79);
-            this.budgerigarUserControl.Name = "budgerigarUserControl";
-            this.budgerigarUserControl.Size = new System.Drawing.Size(334, 51);
-            this.budgerigarUserControl.TabIndex = 2;
-            // 
-            // eagleUserControl
-            // 
-            this.eagleUserControl.Location = new System.Drawing.Point(6, 79);
-            this.eagleUserControl.Name = "eagleUserControl";
-            this.eagleUserControl.Size = new System.Drawing.Size(334, 51);
-            this.eagleUserControl.TabIndex = 5;
-            // 
-            // dogUserControl
-            // 
-            this.dogUserControl.Location = new System.Drawing.Point(6, 79);
-            this.dogUserControl.Name = "dogUserControl";
-            this.dogUserControl.Size = new System.Drawing.Size(334, 51);
-            this.dogUserControl.TabIndex = 4;
-            // 
-            // chbListAllAnimals
-            // 
-            this.chbListAllAnimals.AutoSize = true;
-            this.chbListAllAnimals.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbListAllAnimals.Location = new System.Drawing.Point(704, 346);
-            this.chbListAllAnimals.Name = "chbListAllAnimals";
-            this.chbListAllAnimals.Size = new System.Drawing.Size(134, 24);
-            this.chbListAllAnimals.TabIndex = 13;
-            this.chbListAllAnimals.Text = "List All Animals";
-            this.chbListAllAnimals.UseVisualStyleBackColor = true;
-            // TODO: delete or uncomment this line when the chbListAllAnimals_CheckedChanged method is done.
-            //this.chbListAllAnimals.CheckedChanged += new System.EventHandler(this.chbListAllAnimals_CheckedChanged);
+            this.btnDeleteAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAnimal.Location = new System.Drawing.Point(1304, 756);
+            this.btnDeleteAnimal.Name = "btnDeleteAnimal";
+            this.btnDeleteAnimal.Size = new System.Drawing.Size(120, 30);
+            this.btnDeleteAnimal.TabIndex = 3;
+            this.btnDeleteAnimal.Text = "Delete";
+            this.btnDeleteAnimal.UseVisualStyleBackColor = true;
+            this.btnDeleteAnimal.Click += new System.EventHandler(this.btnDeleteAnimal_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1436, 795);
+            this.ClientSize = new System.Drawing.Size(1436, 796);
+            this.Controls.Add(this.btnDeleteAnimal);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
@@ -417,6 +428,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtFoodSchedule;
         private System.Windows.Forms.CheckBox chbListAllAnimals;
+        private System.Windows.Forms.Button btnDeleteAnimal;
     }
 }
 

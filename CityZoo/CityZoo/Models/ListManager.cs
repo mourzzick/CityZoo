@@ -42,7 +42,12 @@ namespace CityZoo.Models
 
         public bool DeleteAt(int index)
         {
-            throw new NotImplementedException();
+            if (IsValidIndex(index))
+            {
+                list.RemoveAt(index);
+                return true;
+            }
+            return false;
         }
 
         public T GetAt(int index)
