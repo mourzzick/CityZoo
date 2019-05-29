@@ -209,11 +209,11 @@ namespace CityZoo
                 {
                     case Category.Mammal:
                         animal = AnimalFactory.CreateMammalSpecies(GetMammalSpecies(), userInput);
-                        animalManager.AddAnimal(animal);
+                        animalManager.Add(animal);
                         break;
                     case Category.Bird:
                         animal = AnimalFactory.CreateBirdSpecies(GetBirdSpecies(), userInput);
-                        animalManager.AddAnimal(animal);
+                        animalManager.Add(animal);
                         break;
                 }
             }
@@ -242,7 +242,7 @@ namespace CityZoo
         /// </summary>
         private void PopulateAnimalListBox()
         {
-            lbAnimals.Items.AddRange(animalManager.GetAnimalList());
+            lbAnimals.Items.AddRange(animalManager.ToStringArray());
         }
 
 
@@ -418,7 +418,7 @@ namespace CityZoo
             int index = lbAnimals.SelectedIndex;
             if (index > -1)
             {
-                Animal animal = animalManager.GetAnimalAt(index);
+                Animal animal = animalManager.GetAt(index);
                 txtEaterType.Text = animal.GetEaterType().ToString();
                 txtFoodSchedule.Text = (animal.GetFoodSchedule().ToString());
 

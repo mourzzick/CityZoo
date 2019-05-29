@@ -46,9 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IListManager.cs" />
     <Compile Include="Enums\EaterType.cs" />
     <Compile Include="Models\FoodSchedule.cs" />
     <Compile Include="Contracts\IAnimal.cs" />
+    <Compile Include="Models\ListManager.cs" />
     <Compile Include="UserInterface\BudgerigarUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
