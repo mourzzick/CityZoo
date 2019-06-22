@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CityZoo.Models.Species;
+using CityZoo.UserInterface;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,7 @@ namespace CityZoo
     public partial class MainForm : Form
     {
         AnimalManager animalManager;
+        RecipeManager recipeManager;
 
         /// <summary>
         /// Initializes a new instance of the MainForm class.
@@ -20,6 +23,7 @@ namespace CityZoo
         public MainForm()
         {
             animalManager = new AnimalManager();
+            recipeManager = new RecipeManager();
             InitializeComponent();
             InitializeGUI();
         }
@@ -451,6 +455,18 @@ namespace CityZoo
                     PopulateAnimalListBox();
                 }
             }
+        }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            RecipeForm recipeForm = new RecipeForm();
+            if (recipeForm.ShowDialog() == DialogResult.OK)
+            {
+                recipeManager.Add(recipeForm.Recipe);
+                lbFood.Items.Clear();
+                lbFood.Items.AddRange(recipeManager.ToStringArray());
+            }
+            
         }
 
         // TODO: implement the method when fixing the check-box feature.

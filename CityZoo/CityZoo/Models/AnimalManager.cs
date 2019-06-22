@@ -14,6 +14,7 @@ namespace CityZoo
     class AnimalManager : ListManager<Animal>
     {
         private int animalId;
+        
 
         /// <summary>
         /// Initializes a new instance of the AnimalManager class.
@@ -33,7 +34,7 @@ namespace CityZoo
             return animalId;
         }
 
-    
+
 
 
         /// <summary>

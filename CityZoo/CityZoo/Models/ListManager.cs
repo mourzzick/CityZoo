@@ -32,7 +32,12 @@ namespace CityZoo.Models
 
         public bool ChnageAt(T type, int index)
         {
-            throw new NotImplementedException();
+            if (type != null && IsValidIndex(index))
+            {
+                list[index] = type;
+                return true;
+            }
+            return false;
         }
 
         public void DeleteAll()
@@ -57,7 +62,7 @@ namespace CityZoo.Models
                 T item = list[index];
                 return item;
             }
-            return default(T);
+            return default(T); // Return default(T) which means you'll return null if T is a reference type. 
         }
 
         public bool IsValidIndex(int index)
@@ -69,6 +74,7 @@ namespace CityZoo.Models
             }
             return false;
         }
+
 
         public string[] ToStringArray()
         {

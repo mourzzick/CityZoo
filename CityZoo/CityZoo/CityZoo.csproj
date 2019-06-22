@@ -51,6 +51,9 @@
     <Compile Include="Models\FoodSchedule.cs" />
     <Compile Include="Contracts\IAnimal.cs" />
     <Compile Include="Models\ListManager.cs" />
+    <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Models\Species\RecipeManager.cs" />
+    <Compile Include="Models\Staff.cs" />
     <Compile Include="UserInterface\BudgerigarUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -76,6 +79,12 @@
     </Compile>
     <Compile Include="UserInterface\EagleUserControl.Designer.cs">
       <DependentUpon>EagleUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\RecipeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\RecipeForm.Designer.cs">
+      <DependentUpon>RecipeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\UserInput.cs" />
     <Compile Include="UserInterface\BirdUserControl.cs">
@@ -138,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="UserInterface\EagleUserControl.resx">
       <DependentUpon>EagleUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\RecipeForm.resx">
+      <DependentUpon>RecipeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
