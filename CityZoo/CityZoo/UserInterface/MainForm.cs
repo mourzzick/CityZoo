@@ -40,6 +40,7 @@ namespace CityZoo
             ClearInput();
             PopulateSexListBox();
             PopulateCategoryListBox();
+            PopulateAnimalListBox();
             chbListAllAnimals.Checked = false;
             lblAnimalListHeader.Text = $"{"Id",-7}{"Name",-18}{"Age",-7}{"Sex",-10} {"Specification"}";
         }
@@ -77,10 +78,12 @@ namespace CityZoo
         /// </summary>
         private void PopulateSexListBox()
         {
+            lbSex.Items.Clear();
             string[] sexValues = Enum.GetNames(typeof(Sex));
             lbSex.Items.AddRange(sexValues);
             lbSex.SelectedIndex = 0;
         }
+
 
         /// <summary>
         /// Adds all available values to the category list-box.
@@ -224,7 +227,7 @@ namespace CityZoo
                         break;
                 }
             }
-            lbAnimals.Items.Clear();
+           
             PopulateAnimalListBox();
         }
 
@@ -249,6 +252,7 @@ namespace CityZoo
         /// </summary>
         private void PopulateAnimalListBox()
         {
+            lbAnimals.Items.Clear();
             lbAnimals.Items.AddRange(animalManager.ToStringArray());
         }
 
@@ -493,24 +497,35 @@ namespace CityZoo
             }
         }
 
-        // TODO: implement the method when fixing the check-box feature.
-        //private void PopulateAllSpeciesListBox()
-        //{
-        //    lbSpecies.Items.Clear();
-        //    lbSpecies.Items.AddRange(GetAllSpecies());
-        //}
+        /// <summary>
+        /// Resets the application to its initial state when the New file menu is selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuFileNew_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you wish to reset the application? \n" +
+                "All unsaved data will be lost!", "Reset application!", MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                InitializeProgram();
+            }
+        }
 
         /// <summary>
-        /// Gets all animal species
+        /// Resets the application to its initial state
         /// </summary>
-        // TODO: implement the method when fixing the check-box feature.
-        //private string[] GetAllSpecies()
-        //{
-        //    List<string> speciesValues = new List<string>();
-        //    speciesValues.AddRange(Enum.GetNames(typeof(MammalSpecies)).ToList());
-        //    speciesValues.AddRange(Enum.GetNames(typeof(BirdSpecies)).ToList());
-        //    return speciesValues.ToArray();
-        //}
+        private void InitializeProgram()
+        {
+            animalManager = new AnimalManager();
+            recipeManager = new RecipeManager();
+            staffManager = new StaffManager();
+            InitializeGUI();
+        }
+
+
+
+   
 
 
     } // end class

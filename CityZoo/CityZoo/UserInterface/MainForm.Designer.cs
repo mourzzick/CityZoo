@@ -33,6 +33,12 @@
             this.pbAnimalImage = new System.Windows.Forms.PictureBox();
             this.btnAddImage = new System.Windows.Forms.Button();
             this.gbAnimalSpecification = new System.Windows.Forms.GroupBox();
+            this.mammalUserControl = new CityZoo.GUI.MammalUserControl();
+            this.birdUserControl = new CityZoo.GUI.BirdUserControl();
+            this.catUserControl = new CityZoo.UserInterface.CatUserControl();
+            this.budgerigarUserControl = new CityZoo.Models.Species.BudgerigarUserControl();
+            this.eagleUserControl = new CityZoo.UserInterface.EagleUserControl();
+            this.dogUserControl = new CityZoo.UserInterface.DogUserControl();
             this.btnAddAnimal = new System.Windows.Forms.Button();
             this.lbSpecies = new System.Windows.Forms.ListBox();
             this.lbCategory = new System.Windows.Forms.ListBox();
@@ -47,23 +53,30 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblAnimalListHeader = new System.Windows.Forms.Label();
             this.lbAnimals = new System.Windows.Forms.ListBox();
+            this.btnDeleteAnimal = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtFoodSchedule = new System.Windows.Forms.TextBox();
             this.txtEaterType = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnDeleteAnimal = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lbFood = new System.Windows.Forms.ListBox();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.btnAddStaff = new System.Windows.Forms.Button();
             this.lbStaff = new System.Windows.Forms.ListBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.mammalUserControl = new CityZoo.GUI.MammalUserControl();
-            this.birdUserControl = new CityZoo.GUI.BirdUserControl();
-            this.catUserControl = new CityZoo.UserInterface.CatUserControl();
-            this.budgerigarUserControl = new CityZoo.Models.Species.BudgerigarUserControl();
-            this.eagleUserControl = new CityZoo.UserInterface.EagleUserControl();
-            this.dogUserControl = new CityZoo.UserInterface.DogUserControl();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFileNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.textFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.binaryFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.textFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.binaryFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuFileXML = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAnimalImage)).BeginInit();
             this.gbAnimalSpecification.SuspendLayout();
@@ -71,6 +84,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -91,7 +105,7 @@
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 60);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(932, 429);
             this.groupBox1.TabIndex = 0;
@@ -143,6 +157,48 @@
             this.gbAnimalSpecification.TabIndex = 11;
             this.gbAnimalSpecification.TabStop = false;
             this.gbAnimalSpecification.Text = "gbAnimalSpecification";
+            // 
+            // mammalUserControl
+            // 
+            this.mammalUserControl.Location = new System.Drawing.Point(6, 22);
+            this.mammalUserControl.Name = "mammalUserControl";
+            this.mammalUserControl.Size = new System.Drawing.Size(334, 51);
+            this.mammalUserControl.TabIndex = 0;
+            // 
+            // birdUserControl
+            // 
+            this.birdUserControl.Location = new System.Drawing.Point(6, 22);
+            this.birdUserControl.Name = "birdUserControl";
+            this.birdUserControl.Size = new System.Drawing.Size(334, 51);
+            this.birdUserControl.TabIndex = 1;
+            // 
+            // catUserControl
+            // 
+            this.catUserControl.Location = new System.Drawing.Point(6, 79);
+            this.catUserControl.Name = "catUserControl";
+            this.catUserControl.Size = new System.Drawing.Size(334, 51);
+            this.catUserControl.TabIndex = 3;
+            // 
+            // budgerigarUserControl
+            // 
+            this.budgerigarUserControl.Location = new System.Drawing.Point(6, 79);
+            this.budgerigarUserControl.Name = "budgerigarUserControl";
+            this.budgerigarUserControl.Size = new System.Drawing.Size(334, 51);
+            this.budgerigarUserControl.TabIndex = 2;
+            // 
+            // eagleUserControl
+            // 
+            this.eagleUserControl.Location = new System.Drawing.Point(6, 79);
+            this.eagleUserControl.Name = "eagleUserControl";
+            this.eagleUserControl.Size = new System.Drawing.Size(334, 51);
+            this.eagleUserControl.TabIndex = 5;
+            // 
+            // dogUserControl
+            // 
+            this.dogUserControl.Location = new System.Drawing.Point(6, 79);
+            this.dogUserControl.Name = "dogUserControl";
+            this.dogUserControl.Size = new System.Drawing.Size(334, 51);
+            this.dogUserControl.TabIndex = 4;
             // 
             // btnAddAnimal
             // 
@@ -259,7 +315,7 @@
             this.groupBox3.Controls.Add(this.lbAnimals);
             this.groupBox3.Controls.Add(this.btnDeleteAnimal);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 447);
+            this.groupBox3.Location = new System.Drawing.Point(12, 495);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(932, 333);
             this.groupBox3.TabIndex = 1;
@@ -288,13 +344,24 @@
             this.lbAnimals.TabIndex = 0;
             this.lbAnimals.SelectedIndexChanged += new System.EventHandler(this.lbAnimals_SelectedIndexChanged);
             // 
+            // btnDeleteAnimal
+            // 
+            this.btnDeleteAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAnimal.Location = new System.Drawing.Point(794, 289);
+            this.btnDeleteAnimal.Name = "btnDeleteAnimal";
+            this.btnDeleteAnimal.Size = new System.Drawing.Size(120, 30);
+            this.btnDeleteAnimal.TabIndex = 3;
+            this.btnDeleteAnimal.Text = "Delete";
+            this.btnDeleteAnimal.UseVisualStyleBackColor = true;
+            this.btnDeleteAnimal.Click += new System.EventHandler(this.btnDeleteAnimal_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtFoodSchedule);
             this.groupBox2.Controls.Add(this.txtEaterType);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(957, 12);
+            this.groupBox2.Location = new System.Drawing.Point(957, 60);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(467, 429);
             this.groupBox2.TabIndex = 2;
@@ -330,23 +397,12 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Eater Type";
             // 
-            // btnDeleteAnimal
-            // 
-            this.btnDeleteAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAnimal.Location = new System.Drawing.Point(794, 289);
-            this.btnDeleteAnimal.Name = "btnDeleteAnimal";
-            this.btnDeleteAnimal.Size = new System.Drawing.Size(120, 30);
-            this.btnDeleteAnimal.TabIndex = 3;
-            this.btnDeleteAnimal.Text = "Delete";
-            this.btnDeleteAnimal.UseVisualStyleBackColor = true;
-            this.btnDeleteAnimal.Click += new System.EventHandler(this.btnDeleteAnimal_Click);
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.lbFood);
             this.groupBox4.Controls.Add(this.btnAddFood);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox4.Location = new System.Drawing.Point(957, 447);
+            this.groupBox4.Location = new System.Drawing.Point(957, 495);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(467, 333);
             this.groupBox4.TabIndex = 4;
@@ -398,65 +454,122 @@
             this.groupBox5.Controls.Add(this.btnAddStaff);
             this.groupBox5.Controls.Add(this.lbStaff);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox5.Location = new System.Drawing.Point(12, 786);
+            this.groupBox5.Location = new System.Drawing.Point(12, 834);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(1412, 262);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Staff";
             // 
-            // mammalUserControl
+            // menuStrip1
             // 
-            this.mammalUserControl.Location = new System.Drawing.Point(6, 22);
-            this.mammalUserControl.Name = "mammalUserControl";
-            this.mammalUserControl.Size = new System.Drawing.Size(334, 51);
-            this.mammalUserControl.TabIndex = 0;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuFile});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1436, 29);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // birdUserControl
+            // menuFile
             // 
-            this.birdUserControl.Location = new System.Drawing.Point(6, 22);
-            this.birdUserControl.Name = "birdUserControl";
-            this.birdUserControl.Size = new System.Drawing.Size(334, 51);
-            this.birdUserControl.TabIndex = 1;
+            this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuFileNew,
+            this.mnuFileOpen,
+            this.mnuFileSave,
+            this.mnuFileSaveAs,
+            this.toolStripSeparator1,
+            this.mnuFileXML,
+            this.mnuFileExit});
+            this.menuFile.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.menuFile.Name = "menuFile";
+            this.menuFile.Size = new System.Drawing.Size(46, 25);
+            this.menuFile.Text = "File";
             // 
-            // catUserControl
+            // menuFileNew
             // 
-            this.catUserControl.Location = new System.Drawing.Point(6, 79);
-            this.catUserControl.Name = "catUserControl";
-            this.catUserControl.Size = new System.Drawing.Size(334, 51);
-            this.catUserControl.TabIndex = 3;
+            this.menuFileNew.Name = "menuFileNew";
+            this.menuFileNew.Size = new System.Drawing.Size(180, 26);
+            this.menuFileNew.Text = "New";
+            this.menuFileNew.Click += new System.EventHandler(this.menuFileNew_Click);
             // 
-            // budgerigarUserControl
+            // mnuFileOpen
             // 
-            this.budgerigarUserControl.Location = new System.Drawing.Point(6, 79);
-            this.budgerigarUserControl.Name = "budgerigarUserControl";
-            this.budgerigarUserControl.Size = new System.Drawing.Size(334, 51);
-            this.budgerigarUserControl.TabIndex = 2;
+            this.mnuFileOpen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.textFileToolStripMenuItem,
+            this.binaryFileToolStripMenuItem});
+            this.mnuFileOpen.Name = "mnuFileOpen";
+            this.mnuFileOpen.Size = new System.Drawing.Size(180, 26);
+            this.mnuFileOpen.Text = "Open";
             // 
-            // eagleUserControl
+            // textFileToolStripMenuItem
             // 
-            this.eagleUserControl.Location = new System.Drawing.Point(6, 79);
-            this.eagleUserControl.Name = "eagleUserControl";
-            this.eagleUserControl.Size = new System.Drawing.Size(334, 51);
-            this.eagleUserControl.TabIndex = 5;
+            this.textFileToolStripMenuItem.Name = "textFileToolStripMenuItem";
+            this.textFileToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.textFileToolStripMenuItem.Text = "Text file";
             // 
-            // dogUserControl
+            // binaryFileToolStripMenuItem
             // 
-            this.dogUserControl.Location = new System.Drawing.Point(6, 79);
-            this.dogUserControl.Name = "dogUserControl";
-            this.dogUserControl.Size = new System.Drawing.Size(334, 51);
-            this.dogUserControl.TabIndex = 4;
+            this.binaryFileToolStripMenuItem.Name = "binaryFileToolStripMenuItem";
+            this.binaryFileToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.binaryFileToolStripMenuItem.Text = "Binary file";
+            // 
+            // mnuFileSave
+            // 
+            this.mnuFileSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.textFileToolStripMenuItem1,
+            this.binaryFileToolStripMenuItem1});
+            this.mnuFileSave.Name = "mnuFileSave";
+            this.mnuFileSave.Size = new System.Drawing.Size(180, 26);
+            this.mnuFileSave.Text = "Save";
+            // 
+            // textFileToolStripMenuItem1
+            // 
+            this.textFileToolStripMenuItem1.Name = "textFileToolStripMenuItem1";
+            this.textFileToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.textFileToolStripMenuItem1.Text = "Text file";
+            // 
+            // binaryFileToolStripMenuItem1
+            // 
+            this.binaryFileToolStripMenuItem1.Name = "binaryFileToolStripMenuItem1";
+            this.binaryFileToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.binaryFileToolStripMenuItem1.Text = "Binary file";
+            // 
+            // mnuFileSaveAs
+            // 
+            this.mnuFileSaveAs.Name = "mnuFileSaveAs";
+            this.mnuFileSaveAs.Size = new System.Drawing.Size(180, 26);
+            this.mnuFileSaveAs.Text = "Save as";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // mnuFileXML
+            // 
+            this.mnuFileXML.Name = "mnuFileXML";
+            this.mnuFileXML.Size = new System.Drawing.Size(180, 26);
+            this.mnuFileXML.Text = "XML";
+            // 
+            // mnuFileExit
+            // 
+            this.mnuFileExit.Name = "mnuFileExit";
+            this.mnuFileExit.Size = new System.Drawing.Size(180, 26);
+            this.mnuFileExit.Text = "Exit";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1436, 1054);
+            this.ClientSize = new System.Drawing.Size(1436, 1114);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Animal Zoo";
             this.groupBox1.ResumeLayout(false);
@@ -469,7 +582,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -511,6 +627,19 @@
         private System.Windows.Forms.Button btnAddStaff;
         private System.Windows.Forms.ListBox lbStaff;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuFile;
+        private System.Windows.Forms.ToolStripMenuItem menuFileNew;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileOpen;
+        private System.Windows.Forms.ToolStripMenuItem textFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem binaryFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileSave;
+        private System.Windows.Forms.ToolStripMenuItem textFileToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem binaryFileToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileSaveAs;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileXML;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
     }
 }
 
