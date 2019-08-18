@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace CityZoo
 {
-    // biological sex
     enum Sex
     {
         Female,

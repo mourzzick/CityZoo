@@ -20,8 +20,5 @@ namespace CityZoo
         FoodSchedule GetFoodSchedule();
         string GetSpecies();
 
-        
-
-
     }
 }

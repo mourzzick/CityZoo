@@ -11,15 +11,25 @@ namespace CityZoo.Models
     {
         private List<T> list;
 
+        /// <summary>
+        /// Initializes a new instance of the ListManager class.
+        /// </summary>
         public ListManager()
         {
             list = new List<T>();
         }
+
+        /// <summary>
+        /// Gets the total number of elements in the List
+        /// </summary>
         public int Count
         {
             get { return list.Count; }
         }
 
+        /// <summary>
+        /// Adds an element to the end of the list.
+        /// </summary>
         public virtual bool Add(T type)
         {
             if (type != null)
@@ -30,6 +40,9 @@ namespace CityZoo.Models
             return false;
         }
 
+        /// <summary>
+        /// Changes list element at a specified position
+        /// </summary>
         public bool ChnageAt(T type, int index)
         {
             if (type != null && IsValidIndex(index))
@@ -40,11 +53,15 @@ namespace CityZoo.Models
             return false;
         }
 
+        // Not implemented
         public void DeleteAll()
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Deletes element from a list at a specified element
+        /// </summary>
         public bool DeleteAt(int index)
         {
             if (IsValidIndex(index))
@@ -55,6 +72,9 @@ namespace CityZoo.Models
             return false;
         }
 
+        /// <summary>
+        /// Gets a specified element form the list
+        /// </summary>
         public T GetAt(int index)
         {
             if (IsValidIndex(index))
@@ -65,6 +85,9 @@ namespace CityZoo.Models
             return default(T); // Return default(T) which means you'll return null if T is a reference type. 
         }
 
+        /// <summary>
+        /// Checks if an index is within the list range
+        /// </summary>
         public bool IsValidIndex(int index)
         {
             int numberOfElements = Count;
@@ -75,7 +98,9 @@ namespace CityZoo.Models
             return false;
         }
 
-
+        /// <summary>
+        /// Converts all elements in the list to a formated string array
+        /// </summary>
         public string[] ToStringArray()
         {
             int numberOfElements = Count;
@@ -87,6 +112,9 @@ namespace CityZoo.Models
             return output;
         }
 
+        /// <summary>
+        /// Converts all elements in the list to a formated string list
+        /// </summary>
         public List<string> ToStringList()
         {
             int numberOfElements = Count;
@@ -96,7 +124,7 @@ namespace CityZoo.Models
                 output.Add(list[i].ToString());
             }
             return output;
-           
         }
-    }
+
+    } // end class
 }

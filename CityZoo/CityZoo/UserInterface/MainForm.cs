@@ -1,4 +1,5 @@
-﻿using CityZoo.Models.Species;
+﻿using CityZoo.Models;
+using CityZoo.Models.Species;
 using CityZoo.UserInterface;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace CityZoo
     {
         AnimalManager animalManager;
         RecipeManager recipeManager;
+        StaffManager staffManager; // TODO: it might be better to use generic manager to hold animals, recipes and staff
 
         /// <summary>
         /// Initializes a new instance of the MainForm class.
@@ -24,6 +26,7 @@ namespace CityZoo
         {
             animalManager = new AnimalManager();
             recipeManager = new RecipeManager();
+            staffManager = new StaffManager();
             InitializeComponent();
             InitializeGUI();
         }
@@ -417,6 +420,9 @@ namespace CityZoo
             return species;
         }
 
+        /// <summary>
+        /// Displays animal food schedule when selecting an animal form the animal list-box
+        /// </summary>
         private void lbAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = lbAnimals.SelectedIndex;
@@ -442,9 +448,11 @@ namespace CityZoo
             }
         }
 
+        /// <summary>
+        /// Deletes an animal from the animal list-box
+        /// </summary>
         private void btnDeleteAnimal_Click(object sender, EventArgs e)
         {
-
             int index = lbAnimals.SelectedIndex;
             if (index > -1)
             {
@@ -457,6 +465,9 @@ namespace CityZoo
             }
         }
 
+        /// <summary>
+        /// Adds new recipe to the recipe manages and displays the recipe data to the user
+        /// </summary>
         private void btnAddFood_Click(object sender, EventArgs e)
         {
             RecipeForm recipeForm = new RecipeForm();
@@ -466,7 +477,20 @@ namespace CityZoo
                 lbFood.Items.Clear();
                 lbFood.Items.AddRange(recipeManager.ToStringArray());
             }
-            
+        }
+
+        /// <summary>
+        /// Adds new staff to the staff manages and displays the staff data to the user
+        /// </summary>
+        private void btnAddStaff_Click(object sender, EventArgs e)
+        {
+            StaffForm staffForm = new StaffForm();
+            if (staffForm.ShowDialog() == DialogResult.OK)
+            {
+                staffManager.Add(staffForm.Staff);
+                lbStaff.Items.Clear();
+                lbStaff.Items.AddRange(staffManager.ToStringArray());
+            }
         }
 
         // TODO: implement the method when fixing the check-box feature.

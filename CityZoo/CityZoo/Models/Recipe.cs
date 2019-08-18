@@ -34,5 +34,5 @@ namespace CityZoo.Models
         }
 
 
-    }
+    } // end class
 }

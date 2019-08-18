@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace CityZoo
 {
-    // Animal taxonomic class
     enum Category
     {
         Mammal,

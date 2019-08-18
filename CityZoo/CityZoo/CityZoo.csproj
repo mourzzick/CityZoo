@@ -54,30 +54,31 @@
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\Species\RecipeManager.cs" />
     <Compile Include="Models\Staff.cs" />
-    <Compile Include="UserInterface\BudgerigarUserControl.cs">
+    <Compile Include="Models\StaffManager.cs" />
+    <Compile Include="UserInterface\UserControls\BudgerigarUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserInterface\BudgerigarUserControl.Designer.cs">
+    <Compile Include="UserInterface\UserControls\BudgerigarUserControl.Designer.cs">
       <DependentUpon>BudgerigarUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Species\Eagle.cs" />
     <Compile Include="Models\Species\Budgerigar.cs" />
-    <Compile Include="UserInterface\CatUserControl.cs">
+    <Compile Include="UserInterface\UserControls\CatUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserInterface\CatUserControl.Designer.cs">
+    <Compile Include="UserInterface\UserControls\CatUserControl.Designer.cs">
       <DependentUpon>CatUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInterface\DogUserControl.cs">
+    <Compile Include="UserInterface\UserControls\DogUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserInterface\DogUserControl.Designer.cs">
+    <Compile Include="UserInterface\UserControls\DogUserControl.Designer.cs">
       <DependentUpon>DogUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInterface\EagleUserControl.cs">
+    <Compile Include="UserInterface\UserControls\EagleUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserInterface\EagleUserControl.Designer.cs">
+    <Compile Include="UserInterface\UserControls\EagleUserControl.Designer.cs">
       <DependentUpon>EagleUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInterface\RecipeForm.cs">
@@ -86,17 +87,23 @@
     <Compile Include="UserInterface\RecipeForm.Designer.cs">
       <DependentUpon>RecipeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInterface\StaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\StaffForm.Designer.cs">
+      <DependentUpon>StaffForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\UserInput.cs" />
-    <Compile Include="UserInterface\BirdUserControl.cs">
+    <Compile Include="UserInterface\UserControls\BirdUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserInterface\BirdUserControl.Designer.cs">
+    <Compile Include="UserInterface\UserControls\BirdUserControl.Designer.cs">
       <DependentUpon>BirdUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInterface\MammalUserControl.cs">
+    <Compile Include="UserInterface\UserControls\MammalUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserInterface\MammalUserControl.Designer.cs">
+    <Compile Include="UserInterface\UserControls\MammalUserControl.Designer.cs">
       <DependentUpon>MammalUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Animal.cs" />
@@ -118,22 +125,22 @@
     <Compile Include="Models\Categories\Mammal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="UserInterface\BirdUserControl.resx">
+    <EmbeddedResource Include="UserInterface\UserControls\BirdUserControl.resx">
       <DependentUpon>BirdUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserInterface\BudgerigarUserControl.resx">
+    <EmbeddedResource Include="UserInterface\UserControls\BudgerigarUserControl.resx">
       <DependentUpon>BudgerigarUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserInterface\CatUserControl.resx">
+    <EmbeddedResource Include="UserInterface\UserControls\CatUserControl.resx">
       <DependentUpon>CatUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserInterface\DogUserControl.resx">
+    <EmbeddedResource Include="UserInterface\UserControls\DogUserControl.resx">
       <DependentUpon>DogUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserInterface\MammalUserControl.resx">
+    <EmbeddedResource Include="UserInterface\UserControls\MammalUserControl.resx">
       <DependentUpon>MammalUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -145,11 +152,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserInterface\EagleUserControl.resx">
+    <EmbeddedResource Include="UserInterface\UserControls\EagleUserControl.resx">
       <DependentUpon>EagleUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\RecipeForm.resx">
       <DependentUpon>RecipeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\StaffForm.resx">
+      <DependentUpon>StaffForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

@@ -9,7 +9,6 @@ namespace CityZoo.Contracts
     interface IListManager<T>
     {
         int Count { get; }
-
         bool Add(T type);
         bool ChnageAt(T type, int index);
         bool IsValidIndex(int index);

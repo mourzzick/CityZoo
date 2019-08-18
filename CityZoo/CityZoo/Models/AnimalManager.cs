@@ -22,7 +22,6 @@ namespace CityZoo
         public AnimalManager()
         {
             animalId = 0; // default animal id value
-
         }
 
         /// <summary>
@@ -34,14 +33,9 @@ namespace CityZoo
             return animalId;
         }
 
-
-
-
         /// <summary>
         /// Adds an animal to the animal manager, adds animal id.
         /// </summary>
-        
-
         public override bool Add(Animal animal)
         {
             if (animal != null)
@@ -50,11 +44,7 @@ namespace CityZoo
                 return base.Add(animal);
             }
             return false;
-            
-
         }
-
-
 
 
     } // end class

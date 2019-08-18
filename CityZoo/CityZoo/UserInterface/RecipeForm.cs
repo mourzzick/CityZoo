@@ -15,6 +15,9 @@ namespace CityZoo.UserInterface
     {
         Recipe recipe;
 
+        /// <summary>
+        /// Initializes a new instance of the RecipeForm class.
+        /// </summary>
         public RecipeForm()
         {
             InitializeComponent();
@@ -22,11 +25,17 @@ namespace CityZoo.UserInterface
             recipe = new Recipe();
         }
 
+        /// <summary>
+        /// Gets a recipe
+        /// </summary>
         public Recipe Recipe
         {
             get { return recipe; }
         }
 
+        /// <summary>
+        /// Initializes all RecipeForm controls to their default state.
+        /// </summary>
         private void InitializeGUI()
         {
             txtName.Text = string.Empty;
@@ -35,18 +44,23 @@ namespace CityZoo.UserInterface
 
         }
 
-       
+       /// <summary>
+       /// Reads the recipe name data, adds ingredient to the recipe
+       /// and displays the information to the user
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (ReadName() && ReadIngredient())
             {
                 UpdateGUI();
             }
-
-          
-            
         }
 
+        /// <summary>
+        /// Reads the recipe name and adds it inside the recipe object
+        /// </summary>
         private bool ReadName()
         {
             string name = txtName.Text.Trim();
@@ -58,6 +72,10 @@ namespace CityZoo.UserInterface
 
         }
 
+        /// <summary>
+        /// Reads the ingredients and adds to the list inside the recipe object
+        /// </summary>
+        /// <returns></returns>
         private bool ReadIngredient()
         {
             string ingredient = txtIngredient.Text.Trim();
@@ -69,15 +87,22 @@ namespace CityZoo.UserInterface
             return false;
         }
 
+        /// <summary>
+        /// Updates the GUI after reading the recipe object
+        /// </summary>
         private void UpdateGUI()
         {
             lbIngredients.Items.Clear();
             txtName.Text = recipe.Name;
             txtIngredient.Text = string.Empty;
             lbIngredients.Items.AddRange(recipe.ToStringArray());
-
         }
 
+        /// <summary>
+        /// Deletes a selected ingredient from the list of ingredients inside the recipe object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int index = lbIngredients.SelectedIndex;
@@ -86,9 +111,13 @@ namespace CityZoo.UserInterface
                 recipe.DeleteAt(index);
                 UpdateGUI();
             }
-
         }
 
+        /// <summary>
+        /// Changes a selected ingredient inside the recipe object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnChange_Click(object sender, EventArgs e)
         {
             int index = lbIngredients.SelectedIndex;
@@ -99,6 +128,6 @@ namespace CityZoo.UserInterface
             }
 
 
-        }
+        } // end class
     }
 }

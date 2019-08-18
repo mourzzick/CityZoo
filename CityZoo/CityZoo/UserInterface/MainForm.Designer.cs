@@ -55,6 +55,9 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lbFood = new System.Windows.Forms.ListBox();
             this.btnAddFood = new System.Windows.Forms.Button();
+            this.btnAddStaff = new System.Windows.Forms.Button();
+            this.lbStaff = new System.Windows.Forms.ListBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.mammalUserControl = new CityZoo.GUI.MammalUserControl();
             this.birdUserControl = new CityZoo.GUI.BirdUserControl();
             this.catUserControl = new CityZoo.UserInterface.CatUserControl();
@@ -67,6 +70,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -253,10 +257,11 @@
             // 
             this.groupBox3.Controls.Add(this.lblAnimalListHeader);
             this.groupBox3.Controls.Add(this.lbAnimals);
+            this.groupBox3.Controls.Add(this.btnDeleteAnimal);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 447);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(932, 377);
+            this.groupBox3.Size = new System.Drawing.Size(932, 333);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "List of Registered Animals";
@@ -279,7 +284,7 @@
             this.lbAnimals.ItemHeight = 19;
             this.lbAnimals.Location = new System.Drawing.Point(14, 51);
             this.lbAnimals.Name = "lbAnimals";
-            this.lbAnimals.Size = new System.Drawing.Size(900, 308);
+            this.lbAnimals.Size = new System.Drawing.Size(900, 232);
             this.lbAnimals.TabIndex = 0;
             this.lbAnimals.SelectedIndexChanged += new System.EventHandler(this.lbAnimals_SelectedIndexChanged);
             // 
@@ -328,7 +333,7 @@
             // btnDeleteAnimal
             // 
             this.btnDeleteAnimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAnimal.Location = new System.Drawing.Point(806, 830);
+            this.btnDeleteAnimal.Location = new System.Drawing.Point(794, 289);
             this.btnDeleteAnimal.Name = "btnDeleteAnimal";
             this.btnDeleteAnimal.Size = new System.Drawing.Size(120, 30);
             this.btnDeleteAnimal.TabIndex = 3;
@@ -339,10 +344,11 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.lbFood);
+            this.groupBox4.Controls.Add(this.btnAddFood);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox4.Location = new System.Drawing.Point(957, 447);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(467, 377);
+            this.groupBox4.Size = new System.Drawing.Size(467, 333);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Food Details";
@@ -351,21 +357,53 @@
             // 
             this.lbFood.FormattingEnabled = true;
             this.lbFood.ItemHeight = 16;
-            this.lbFood.Location = new System.Drawing.Point(10, 49);
+            this.lbFood.Location = new System.Drawing.Point(10, 51);
             this.lbFood.Name = "lbFood";
-            this.lbFood.Size = new System.Drawing.Size(451, 308);
+            this.lbFood.Size = new System.Drawing.Size(451, 228);
             this.lbFood.TabIndex = 0;
             // 
             // btnAddFood
             // 
             this.btnAddFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnAddFood.Location = new System.Drawing.Point(1284, 835);
+            this.btnAddFood.Location = new System.Drawing.Point(341, 285);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(120, 30);
             this.btnAddFood.TabIndex = 5;
             this.btnAddFood.Text = "Add Food";
             this.btnAddFood.UseVisualStyleBackColor = true;
             this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
+            // 
+            // btnAddStaff
+            // 
+            this.btnAddStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnAddStaff.Location = new System.Drawing.Point(1286, 216);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Size = new System.Drawing.Size(120, 30);
+            this.btnAddStaff.TabIndex = 6;
+            this.btnAddStaff.Text = "Add Staff";
+            this.btnAddStaff.UseVisualStyleBackColor = true;
+            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
+            // 
+            // lbStaff
+            // 
+            this.lbStaff.FormattingEnabled = true;
+            this.lbStaff.ItemHeight = 16;
+            this.lbStaff.Location = new System.Drawing.Point(6, 30);
+            this.lbStaff.Name = "lbStaff";
+            this.lbStaff.Size = new System.Drawing.Size(1400, 180);
+            this.lbStaff.TabIndex = 7;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btnAddStaff);
+            this.groupBox5.Controls.Add(this.lbStaff);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.groupBox5.Location = new System.Drawing.Point(12, 786);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(1412, 262);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Staff";
             // 
             // mammalUserControl
             // 
@@ -413,10 +451,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1436, 881);
-            this.Controls.Add(this.btnAddFood);
+            this.ClientSize = new System.Drawing.Size(1436, 1054);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.btnDeleteAnimal);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
@@ -431,6 +468,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -470,6 +508,9 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ListBox lbFood;
         private System.Windows.Forms.Button btnAddFood;
+        private System.Windows.Forms.Button btnAddStaff;
+        private System.Windows.Forms.ListBox lbStaff;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 
